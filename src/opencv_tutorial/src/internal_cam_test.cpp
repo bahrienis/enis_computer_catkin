@@ -82,7 +82,10 @@ uchar red = intensity.val[2];
   cout << "Blue value at 50,50 is " << blue/1 <<endl;   
      
      
-     
+    if(blue > 100) 
+    {
+		cout << "Mavi 100 degerinin üstüne çıktı" << endl; 
+	}
      
      
 
