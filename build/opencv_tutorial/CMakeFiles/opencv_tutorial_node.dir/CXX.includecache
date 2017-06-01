@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/enis/catkin_ws/src/opencv_tutorial/src/internal_cam_test.cpp
+/home/enis/catkin_ws/src/opencv_tutorial/src/internal_cam_testv0.1.0.cpp
 ros/ros.h
 -
 image_transport/image_transport.h
@@ -20,6 +20,18 @@ opencv2/imgproc/imgproc.hpp
 opencv2/highgui/highgui.hpp
 -
 iostream
+-
+stdio.h
+-
+string.h
+-
+unistd.h
+-
+fcntl.h
+-
+errno.h
+-
+termios.h
 -
 opencv2/highgui/highgui.hpp
 /home/enis/catkin_ws/src/opencv_tutorial/src/opencv2/highgui/highgui.hpp

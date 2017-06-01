@@ -6,8 +6,34 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <iostream>
 
+
+
+
+
+
+
+
+
+
+#include <stdio.h>   /* Standard input/output definitions */
+#include <string.h>  /* String function definitions */
+#include <unistd.h>  /* UNIX standard function definitions */
+#include <fcntl.h>   /* File control definitions */
+#include <errno.h>   /* Error number definitions */
+#include <termios.h> /* POSIX terminal control definitions */
+
+
+
+
+
+
+
+
 using namespace std; 
 using namespace cv;
+
+
+int n;
 
 /* INTERNAL CAM TEST CODE */
 /* REF: https://www.youtube.com/watch?v=HqNJbx0uAv0 */
@@ -85,6 +111,7 @@ uchar red = intensity.val[2];
     if(blue > 100) 
     {
 		cout << "Mavi 100 degerinin üstüne çıktı" << endl; 
+		cout << "the value of n is " << n <<endl;
 	}
      
      
@@ -107,11 +134,89 @@ uchar red = intensity.val[2];
 
 int main(int argc, char **argv)
 {
-  //SetUP ROS.
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  int fd; /* File descriptor for the port */
+
+  fd = open("/dev/ttyS0", O_RDWR | O_NOCTTY | O_NDELAY);
+  if (fd == -1)
+  {
+   /* Could not open the port. */
+    perror("open_port: Unable to open /dev/ttyS0 - ");  //Bu hatayı verirse "sudo chmod o+rw /dev/ttyS0" kodunu kullan.
+  }
+  else
+  
+  
+  {
+	  
+    fcntl(fd, F_SETFL, 0);
+cout << "Serial port is opened" << endl;
+
+
+
+
+
+}
+
+  n = write(fd, "ATZ\r", 4);
+  if (n < 0)
+  
+  
+  
+  
+  
+  {
+    fputs("write() of 4 bytes failed!\n", stderr);
+
+cout << "the value of n is " << n <<endl;
+
+
+
+
+
+
+
+
+
+}
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+    //SetUP ROS.
   ros::init(argc, argv, "opencv_tutorial");
   cam_test cam_object;
 
   ROS_INFO("Cam Tested!");
+  
+  
+  
+  
+  
+  
+  
+   return (fd);
+  
+  
+  
+  
+  
+  
 }
 
 

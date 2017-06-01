@@ -1,0 +1,58 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~debug_lines" : \b [bool] whether to show debug information and images or not min: False, default: False, max: True
+- \b "~use_gpu" : \b [bool] whether to use hardware acceleration or not min: False, default: False, max: True
+- \b "~number_of_threads" : \b [int] How many cpu threads (workers) should be used min: 0, default: 4, max: 10
+- \b "~camera_height" : \b [double] height of the camera in mm min: 50.0, default: 325.0, max: 500.0
+- \b "~camera_pitch" : \b [double] pitch of the camera in degrees min: 0.0, default: 23.4, max: 70.0
+- \b "~max_num_lanes" : \b [int] maximum number of lanes to detect min: 1, default: 6, max: 15
+- \b "~lane_num_absent_frames" : \b [int] number of frames the current lane is allowed to be absent before deleting it min: 1, default: 3, max: 100
+- \b "~lane_threshold" : \b [double] Threshold to consider a combination of two lines a valid lane min: 50.0, default: 250.0, max: 500.0
+- \b "~draw_roi" : \b [bool] whether to draw the region of interest or not min: False, default: False, max: True
+- \b "~draw_boxes" : \b [bool] whether to draw the bounding boxes of the lanes or not min: False, default: False, max: True
+- \b "~draw_lines" : \b [bool] whether to draw the lines or not min: False, default: False, max: True
+- \b "~draw_splines" : \b [bool] whether to draw the splines(lanes) or not min: False, default: True, max: True
+- \b "~draw_tracked_centroids" : \b [bool] whether to draw the tracked centroids or not min: False, default: False, max: True
+- \b "~transform_back" : \b [bool] whether to transform back the detected lines on IPM to the original image min: False, default: False, max: True
+- \b "~tracking_dt" : \b [double] Delta time for tracking min: 0.03, default: 0.2, max: 1.0
+- \b "~tracking_acc_noise_magnitude" : \b [double] Magnitude of the acceleration noise min: 0.05, default: 0.1, max: 0.9
+- \b "~tracking_dist_threshold" : \b [double] maximum distance threshold for assign a line on the current frame to a previous one min: 10.0, default: 60.0, max: 100.0
+- \b "~tracking_num_absent_frames" : \b [int] number of frames the line is allowed to be absent before deleting it min: 1, default: 3, max: 100
+- \b "~tracking_num_seen_frames" : \b [int] number of frames before considering a line good min: 1, default: 3, max: 100
+- \b "~min_spline_ransac_window_width" : \b [int] minimum width for the spline ransac window (in pixels) min: 1, default: 16, max: 40
+- \b "~driving_orientation" : \b [int] Driving orientation min: 0, default: 0, max: 1
+- \b "~ipmWidth" : \b [int] width of IPM image to use min: 160, default: 320, max: 640
+- \b "~ipmHeight" : \b [int] height of IPM image to use min: 120, default: 240, max: 480
+- \b "~ipmTop" : \b [int] Top point in original image of region to make IPM for min: 50, default: 220, max: 220
+- \b "~ipmLeft" : \b [int] Left point in original image of region to make IPM for min: 10, default: 10, max: 150
+- \b "~ipmRight" : \b [int] Right point in original image of region to make IPM for min: 300, default: 540, max: 640
+- \b "~ipmBottom" : \b [int] Bottom point in original image of region to make IPM for min: 300, default: 480, max: 480
+- \b "~ipmInterpolation" : \b [int] The method to use for IPM interpolation (default 0: bilinear. 1: NN) min: 0, default: 0, max: 1
+- \b "~lineWidth" : \b [double] width of line to detect in mm (in the world) min: 10.0, default: 18.0, max: 30.0
+- \b "~lineHeight" : \b [double] height of line to detect in mm (in the world) min: 10.0, default: 500.0, max: 2000.0
+- \b "~line_dist_threshold" : \b [double] maximum allowed position difference (in pixel) of a line centroid from one frame to the next one min: 1.0, default: 8.0, max: 50.0
+- \b "~width_between_lines" : \b [double] width between to lines in mm (in the world) min: 400.0, default: 422.0, max: 850.0
+- \b "~width_between_lines_threshold" : \b [double] threshold for the lane width min: 1.0, default: 40.0, max: 100.0
+- \b "~lane_width_weight" : \b [double] Cost weight for the lane width min: 1.0, default: 3.0, max: 10.0
+- \b "~use_custom_kernels" : \b [bool] whether to use custom kernels for filtering min: False, default: False, max: True
+- \b "~kernelWidth" : \b [int] widht of kernel to use for filtering min: 1, default: 7, max: 30
+- \b "~kernelHeight" : \b [int] height of kernel to use for filtering min: 1, default: 5, max: 30
+- \b "~lowerQuantile" : \b [double] lower quantile to use for thresholding the filtered image min: 0.0, default: 0.985, max: 0.99
+- \b "~binarize" : \b [bool] whether to binarize the thresholded image or use the raw values min: False, default: False, max: True
+- \b "~detectionThreshold" : \b [double] threshold for line scores to declare as line min: 0.0, default: 4.0, max: 30.0
+- \b "~smoothScores" : \b [bool] whether to smooth scores of lines detected or not min: False, default: True, max: True
+- \b "~ipmVpPortion" : \b [double] Portion of IPM image height to add to y-coordinate of VP min: 0.0, default: 0.0, max: 0.8
+- \b "~getEndPoints" : \b [bool] Get the endpoints of the line min: False, default: False, max: True
+- \b "~group" : \b [bool] group nearby lines or not (default 1: group) min: False, default: True, max: True
+- \b "~groupThreshold" : \b [double] Threshold for grouping nearby lines min: 10.0, default: 15.45, max: 25.0
+- \b "~ransacLineNumSamples" : \b [int] Number of samples to use for RANSAC min: 0, default: 4, max: 180
+- \b "~ransacLineNumIterations" : \b [int] Number of iterations to use for RANSAC min: 25, default: 40, max: 100
+- \b "~ransacLineNumGoodFit" : \b [int] Number of close points to consider a good line fit min: 10, default: 10, max: 15
+- \b "~ransacLineThreshold" : \b [double] Threshold to consider a point close min: 0.0, default: 0.2, max: 0.9
+- \b "~ransacLineScoreThreshold" : \b [double] Threshold for detected line scores min: 0.0, default: 0.0, max: 20.0
+- \b "~ransacLineBinarize" : \b [bool] Whether to binarize image for RANSAC or not min: False, default: False, max: True
+- \b "~ransacLineWindow" : \b [int] Half width to use for ransac window min: 0, default: 15, max: 15
+- \b "~overlapThreshold" : \b [double] Overlap threshold to use for grouping of bounding boxes min: 0.3, default: 0.3, max: 0.9
+

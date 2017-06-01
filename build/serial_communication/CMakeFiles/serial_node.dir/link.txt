@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/serial_node.dir/src/serial_example_node.cpp.o  -o /home/enis/catkin_ws/devel/lib/serial_communication/serial_node -rdynamic 

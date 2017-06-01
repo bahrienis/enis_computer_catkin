@@ -1,0 +1,59 @@
+\subsubsection usage Usage
+\verbatim
+<node name="lane_detector" pkg="lane_detector" type="lane_detector">
+  <param name="debug_lines" type="bool" value="False" />
+  <param name="use_gpu" type="bool" value="False" />
+  <param name="number_of_threads" type="int" value="4" />
+  <param name="camera_height" type="double" value="325.0" />
+  <param name="camera_pitch" type="double" value="23.4" />
+  <param name="max_num_lanes" type="int" value="6" />
+  <param name="lane_num_absent_frames" type="int" value="3" />
+  <param name="lane_threshold" type="double" value="250.0" />
+  <param name="draw_roi" type="bool" value="False" />
+  <param name="draw_boxes" type="bool" value="False" />
+  <param name="draw_lines" type="bool" value="False" />
+  <param name="draw_splines" type="bool" value="True" />
+  <param name="draw_tracked_centroids" type="bool" value="False" />
+  <param name="transform_back" type="bool" value="False" />
+  <param name="tracking_dt" type="double" value="0.2" />
+  <param name="tracking_acc_noise_magnitude" type="double" value="0.1" />
+  <param name="tracking_dist_threshold" type="double" value="60.0" />
+  <param name="tracking_num_absent_frames" type="int" value="3" />
+  <param name="tracking_num_seen_frames" type="int" value="3" />
+  <param name="min_spline_ransac_window_width" type="int" value="16" />
+  <param name="driving_orientation" type="int" value="0" />
+  <param name="ipmWidth" type="int" value="320" />
+  <param name="ipmHeight" type="int" value="240" />
+  <param name="ipmTop" type="int" value="220" />
+  <param name="ipmLeft" type="int" value="10" />
+  <param name="ipmRight" type="int" value="540" />
+  <param name="ipmBottom" type="int" value="480" />
+  <param name="ipmInterpolation" type="int" value="0" />
+  <param name="lineWidth" type="double" value="18.0" />
+  <param name="lineHeight" type="double" value="500.0" />
+  <param name="line_dist_threshold" type="double" value="8.0" />
+  <param name="width_between_lines" type="double" value="422.0" />
+  <param name="width_between_lines_threshold" type="double" value="40.0" />
+  <param name="lane_width_weight" type="double" value="3.0" />
+  <param name="use_custom_kernels" type="bool" value="False" />
+  <param name="kernelWidth" type="int" value="7" />
+  <param name="kernelHeight" type="int" value="5" />
+  <param name="lowerQuantile" type="double" value="0.985" />
+  <param name="binarize" type="bool" value="False" />
+  <param name="detectionThreshold" type="double" value="4.0" />
+  <param name="smoothScores" type="bool" value="True" />
+  <param name="ipmVpPortion" type="double" value="0.0" />
+  <param name="getEndPoints" type="bool" value="False" />
+  <param name="group" type="bool" value="True" />
+  <param name="groupThreshold" type="double" value="15.45" />
+  <param name="ransacLineNumSamples" type="int" value="4" />
+  <param name="ransacLineNumIterations" type="int" value="40" />
+  <param name="ransacLineNumGoodFit" type="int" value="10" />
+  <param name="ransacLineThreshold" type="double" value="0.2" />
+  <param name="ransacLineScoreThreshold" type="double" value="0.0" />
+  <param name="ransacLineBinarize" type="bool" value="False" />
+  <param name="ransacLineWindow" type="int" value="15" />
+  <param name="overlapThreshold" type="double" value="0.3" />
+</node>
+\endverbatim
+

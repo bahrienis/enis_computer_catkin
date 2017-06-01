@@ -555,32 +555,32 @@ roscpp_generate_messages_nodejs/fast:
 	cd /home/enis/catkin_ws/build && $(MAKE) -f opencv_tutorial/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make opencv_tutorial/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
 
-src/internal_cam_test.o: src/internal_cam_test.cpp.o
+src/internal_cam_testv0.1.0.o: src/internal_cam_testv0.1.0.cpp.o
 
-.PHONY : src/internal_cam_test.o
+.PHONY : src/internal_cam_testv0.1.0.o
 
 # target to build an object file
-src/internal_cam_test.cpp.o:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build.make opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/src/internal_cam_test.cpp.o
-.PHONY : src/internal_cam_test.cpp.o
+src/internal_cam_testv0.1.0.cpp.o:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build.make opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/src/internal_cam_testv0.1.0.cpp.o
+.PHONY : src/internal_cam_testv0.1.0.cpp.o
 
-src/internal_cam_test.i: src/internal_cam_test.cpp.i
+src/internal_cam_testv0.1.0.i: src/internal_cam_testv0.1.0.cpp.i
 
-.PHONY : src/internal_cam_test.i
+.PHONY : src/internal_cam_testv0.1.0.i
 
 # target to preprocess a source file
-src/internal_cam_test.cpp.i:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build.make opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/src/internal_cam_test.cpp.i
-.PHONY : src/internal_cam_test.cpp.i
+src/internal_cam_testv0.1.0.cpp.i:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build.make opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/src/internal_cam_testv0.1.0.cpp.i
+.PHONY : src/internal_cam_testv0.1.0.cpp.i
 
-src/internal_cam_test.s: src/internal_cam_test.cpp.s
+src/internal_cam_testv0.1.0.s: src/internal_cam_testv0.1.0.cpp.s
 
-.PHONY : src/internal_cam_test.s
+.PHONY : src/internal_cam_testv0.1.0.s
 
 # target to generate assembly for a file
-src/internal_cam_test.cpp.s:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build.make opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/src/internal_cam_test.cpp.s
-.PHONY : src/internal_cam_test.cpp.s
+src/internal_cam_testv0.1.0.cpp.s:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build.make opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/src/internal_cam_testv0.1.0.cpp.s
+.PHONY : src/internal_cam_testv0.1.0.cpp.s
 
 # Help Target
 help:
@@ -621,9 +621,9 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... src/internal_cam_test.o"
-	@echo "... src/internal_cam_test.i"
-	@echo "... src/internal_cam_test.s"
+	@echo "... src/internal_cam_testv0.1.0.o"
+	@echo "... src/internal_cam_testv0.1.0.i"
+	@echo "... src/internal_cam_testv0.1.0.s"
 .PHONY : help
 
 
