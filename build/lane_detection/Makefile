@@ -180,32 +180,32 @@ lane_detection_node/fast:
 	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/build
 .PHONY : lane_detection_node/fast
 
-src/internal_cam_test.o: src/internal_cam_test.cpp.o
+src/lane_detector_enis.o: src/lane_detector_enis.cpp.o
 
-.PHONY : src/internal_cam_test.o
+.PHONY : src/lane_detector_enis.o
 
 # target to build an object file
-src/internal_cam_test.cpp.o:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/internal_cam_test.cpp.o
-.PHONY : src/internal_cam_test.cpp.o
+src/lane_detector_enis.cpp.o:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/lane_detector_enis.cpp.o
+.PHONY : src/lane_detector_enis.cpp.o
 
-src/internal_cam_test.i: src/internal_cam_test.cpp.i
+src/lane_detector_enis.i: src/lane_detector_enis.cpp.i
 
-.PHONY : src/internal_cam_test.i
+.PHONY : src/lane_detector_enis.i
 
 # target to preprocess a source file
-src/internal_cam_test.cpp.i:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/internal_cam_test.cpp.i
-.PHONY : src/internal_cam_test.cpp.i
+src/lane_detector_enis.cpp.i:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/lane_detector_enis.cpp.i
+.PHONY : src/lane_detector_enis.cpp.i
 
-src/internal_cam_test.s: src/internal_cam_test.cpp.s
+src/lane_detector_enis.s: src/lane_detector_enis.cpp.s
 
-.PHONY : src/internal_cam_test.s
+.PHONY : src/lane_detector_enis.s
 
 # target to generate assembly for a file
-src/internal_cam_test.cpp.s:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/internal_cam_test.cpp.s
-.PHONY : src/internal_cam_test.cpp.s
+src/lane_detector_enis.cpp.s:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/lane_detector_enis.cpp.s
+.PHONY : src/lane_detector_enis.cpp.s
 
 # Help Target
 help:
@@ -221,9 +221,9 @@ help:
 	@echo "... test"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... src/internal_cam_test.o"
-	@echo "... src/internal_cam_test.i"
-	@echo "... src/internal_cam_test.s"
+	@echo "... src/lane_detector_enis.o"
+	@echo "... src/lane_detector_enis.i"
+	@echo "... src/lane_detector_enis.s"
 .PHONY : help
 
 

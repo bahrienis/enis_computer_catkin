@@ -180,32 +180,32 @@ opencv_tutorial_node/fast:
 	cd /home/enis/catkin_ws/build && $(MAKE) -f opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build.make opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build
 .PHONY : opencv_tutorial_node/fast
 
-src/internal_cam_testv0.1.0.o: src/internal_cam_testv0.1.0.cpp.o
+src/internal_cam_testv0.1.1.o: src/internal_cam_testv0.1.1.cpp.o
 
-.PHONY : src/internal_cam_testv0.1.0.o
+.PHONY : src/internal_cam_testv0.1.1.o
 
 # target to build an object file
-src/internal_cam_testv0.1.0.cpp.o:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build.make opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/src/internal_cam_testv0.1.0.cpp.o
-.PHONY : src/internal_cam_testv0.1.0.cpp.o
+src/internal_cam_testv0.1.1.cpp.o:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build.make opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/src/internal_cam_testv0.1.1.cpp.o
+.PHONY : src/internal_cam_testv0.1.1.cpp.o
 
-src/internal_cam_testv0.1.0.i: src/internal_cam_testv0.1.0.cpp.i
+src/internal_cam_testv0.1.1.i: src/internal_cam_testv0.1.1.cpp.i
 
-.PHONY : src/internal_cam_testv0.1.0.i
+.PHONY : src/internal_cam_testv0.1.1.i
 
 # target to preprocess a source file
-src/internal_cam_testv0.1.0.cpp.i:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build.make opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/src/internal_cam_testv0.1.0.cpp.i
-.PHONY : src/internal_cam_testv0.1.0.cpp.i
+src/internal_cam_testv0.1.1.cpp.i:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build.make opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/src/internal_cam_testv0.1.1.cpp.i
+.PHONY : src/internal_cam_testv0.1.1.cpp.i
 
-src/internal_cam_testv0.1.0.s: src/internal_cam_testv0.1.0.cpp.s
+src/internal_cam_testv0.1.1.s: src/internal_cam_testv0.1.1.cpp.s
 
-.PHONY : src/internal_cam_testv0.1.0.s
+.PHONY : src/internal_cam_testv0.1.1.s
 
 # target to generate assembly for a file
-src/internal_cam_testv0.1.0.cpp.s:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build.make opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/src/internal_cam_testv0.1.0.cpp.s
-.PHONY : src/internal_cam_testv0.1.0.cpp.s
+src/internal_cam_testv0.1.1.cpp.s:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build.make opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/src/internal_cam_testv0.1.1.cpp.s
+.PHONY : src/internal_cam_testv0.1.1.cpp.s
 
 # Help Target
 help:
@@ -221,9 +221,9 @@ help:
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... src/internal_cam_testv0.1.0.o"
-	@echo "... src/internal_cam_testv0.1.0.i"
-	@echo "... src/internal_cam_testv0.1.0.s"
+	@echo "... src/internal_cam_testv0.1.1.o"
+	@echo "... src/internal_cam_testv0.1.1.i"
+	@echo "... src/internal_cam_testv0.1.1.s"
 .PHONY : help
 
 
