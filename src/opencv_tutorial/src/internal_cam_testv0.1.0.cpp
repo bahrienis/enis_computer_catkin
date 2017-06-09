@@ -11,6 +11,7 @@
 #include <fcntl.h>   /* File control definitions */
 #include <errno.h>   /* Error number definitions */
 #include <termios.h> /* POSIX terminal control definitions */
+#include <sys/ioctl.h> //ioctl() call definitions
 
 
 using namespace std; 
@@ -23,6 +24,7 @@ using namespace cv;
 
 int n, x, y;
 int fd; /* File descriptor for the port */
+int RTS_flag;
 
 
 class cam_test{
@@ -89,6 +91,28 @@ class cam_test{
 					{
 						fputs("write() of 4 bytes failed!\n", stderr);
 						cout << "the value of n is " << n << endl;
+						
+						
+						
+						
+						
+						
+						
+						  
+  
+  
+  RTS_flag = TIOCM_RTS;
+  ioctl(fd,TIOCMBIS,&RTS_flag); //Set RTS pin
+  getchar();
+  ioctl(fd,TIOCMBIC,&RTS_flag); //Clear RTS pin
+  close(fd);
+  
+  
+  
+  
+  
+  
+  
 	
 					}			
 				//	return (fd);
@@ -115,9 +139,16 @@ int main(int argc, char **argv)
 {
 
   ros::init(argc, argv, "opencv_tutorial");					//SetUP ROS.
- // int fd; /* File descriptor for the port */
+  
+  int fd; /* File descriptor for the port */
 
- // fd = open("/dev/ttyS0", O_RDWR | O_NOCTTY | O_NDELAY);
+  fd = open("/dev/ttyS0", O_RDWR | O_NOCTTY | O_NDELAY);
+  
+
+  
+  
+  
+  
   if (fd == -1)
   {
    /* Could not open the port. */
@@ -127,6 +158,8 @@ int main(int argc, char **argv)
   {
     fcntl(fd, F_SETFL, 0);
 	cout << "Serial port is opened" << endl;
+	
+	
 }
 
 /*  n = write(fd, "ATZ\r", 4);

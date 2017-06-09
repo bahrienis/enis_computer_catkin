@@ -5,4 +5,6 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
+subdirs(Lane_Detector-master)
+subdirs(lane_detection)
 subdirs(opencv_tutorial)
