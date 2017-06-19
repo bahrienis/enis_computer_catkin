@@ -120,6 +120,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/enis/catkin_ws/build/Lane_Detector-master/cmake_install.cmake")
   include("/home/enis/catkin_ws/build/lane_detection/cmake_install.cmake")
   include("/home/enis/catkin_ws/build/opencv_tutorial/cmake_install.cmake")
+  include("/home/enis/catkin_ws/build/usb_cam/cmake_install.cmake")
 
 endif()
 
