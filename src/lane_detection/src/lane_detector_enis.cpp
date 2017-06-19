@@ -234,6 +234,13 @@ uchar red = intensity.val[2];
  
  
  
+
+	
+	
+ 
+ 
+ 
+ 
  
  
  
@@ -262,28 +269,14 @@ uchar red = intensity.val[2];
 	
 	
 	
+	
+	
 
 	 
 	 
 	IPM ipm( Size(dWidth, dHeight), Size(dWidth, dHeight), origPoints, dstPoints );
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-
-	
-	
-
 	
 	
 	
@@ -328,6 +321,81 @@ bool bSuccess = cap.read(inputImg);
 		 double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
 		 printf("%.2f (ms)\r", 1000*elapsed_secs);
 		 ipm.drawPoints(origPoints, inputImg );
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+	 
+		 
+		 
+		 
+		 
+		 
+		 
+//Solar Operator defined		 
+		 
+		 
+		
+	
+	 
+Mat grad;
+int scale = 1;
+int delta = 0;
+int ddepth = CV_16S;		 
+		 
+GaussianBlur( inputImg, inputImg, Size(3,3), 0, 0, BORDER_DEFAULT );		 
+		 
+cvtColor( inputImg, inputImgGray, CV_BGR2GRAY );		 
+		 
+		 
+Mat grad_x, grad_y;
+Mat abs_grad_x, abs_grad_y;
+
+/// Gradient X
+Sobel( inputImgGray, grad_x, ddepth, 1, 0, 3, scale, delta, BORDER_DEFAULT );
+/// Gradient Y
+Sobel( inputImgGray, grad_y, ddepth, 0, 1, 3, scale, delta, BORDER_DEFAULT );
+		 
+		 
+convertScaleAbs( grad_x, abs_grad_x );
+convertScaleAbs( grad_y, abs_grad_y );		 
+		 
+addWeighted( abs_grad_x, 0.5, abs_grad_y, 0.5, 0, grad );		 
+		 
+imshow( "sanane", grad );		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
 
 		 // View		
 		 imshow("Input", inputImg);
