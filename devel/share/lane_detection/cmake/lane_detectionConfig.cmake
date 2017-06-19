@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(lane_detection_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT " " STREQUAL " ")
+if(NOT "/home/enis/catkin_ws/src/lane_detection/include " STREQUAL " ")
   set(lane_detection_INCLUDE_DIRS "")
-  set(_include_dirs "")
+  set(_include_dirs "/home/enis/catkin_ws/src/lane_detection/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
