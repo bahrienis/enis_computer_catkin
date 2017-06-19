@@ -351,7 +351,7 @@ bool bSuccess = cap.read(inputImg);
 		 
 		 
 		 
-//Solar Operator defined		 
+//Sobel Operator defined		 
 		 
 		 
 		
