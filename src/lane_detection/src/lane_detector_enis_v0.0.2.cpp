@@ -348,9 +348,9 @@ bool bSuccess = cap.read(inputImg);
 		 
 		 
 		 
-	 
+//Get and show an image	 
 
-
+/*
 
 
 const char* filename = argc >= 2 ? argv[1] : "/home/enis/Schreibtisch/deneme3.jpg";
@@ -368,7 +368,7 @@ const char* filename = argc >= 2 ? argv[1] : "/home/enis/Schreibtisch/deneme3.jp
 imshow( "Display window", src );	
 	
 	
-	
+*/	
 	
 	
 	
@@ -416,10 +416,13 @@ imshow( "Sobel", grad );
 
 Mat cdst,dst;
 Canny(grad, dst, 50, 200, 3);
- cvtColor(dst, cdst, CV_GRAY2BGR);
+cvtColor(dst, cdst, CV_GRAY2BGR);
  
+ 
+/* 
 vector<Vec2f> lines;
 HoughLines(dst, lines, 1, CV_PI/180, 100, 0, 0 );
+
 
 for( size_t i = 0; i < lines.size(); i++ )
 {
@@ -432,7 +435,14 @@ for( size_t i = 0; i < lines.size(); i++ )
   pt2.x = cvRound(x0 - 1000*(-b));
   pt2.y = cvRound(y0 - 1000*(a));
   line( cdst, pt1, pt2, Scalar(0,0,255), 3, CV_AA);
-}
+}*/
+  vector<Vec4i> lines;
+  HoughLinesP(dst, lines, 1, CV_PI/180, 50, 50, 10 );
+  for( size_t i = 0; i < lines.size(); i++ )
+  {
+    Vec4i l = lines[i];
+    line( cdst, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0,0,255), 3, CV_AA);
+  }
  
  imshow("detected lines", cdst);
  
@@ -440,6 +450,14 @@ for( size_t i = 0; i < lines.size(); i++ )
 
 
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
 
  
