@@ -330,13 +330,11 @@ bool bSuccess = cap.read(inputImg);
 		 
 		 
 		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
+
+
+
+
+
 		 
 		 
 		 
@@ -353,7 +351,7 @@ bool bSuccess = cap.read(inputImg);
 
 
 
-const char* filename = argc >= 2 ? argv[1] : "/home/enis/Schreibtisch/20170622_153911_yeni.jpg";
+const char* filename = argc >= 2 ? argv[1] : "/home/enis/Schreibtisch/frame0006.jpg";
 
  Mat src = imread(filename, 0);
  if(src.empty())
@@ -362,11 +360,51 @@ const char* filename = argc >= 2 ? argv[1] : "/home/enis/Schreibtisch/20170622_1
      return -1;
  }
  	 
+	
+	
+imshow( "Display window", src );	
+
+
+
+
+
+	
+	
+	
+	
+	
+/*
+
+
+
+ //Region of Interest
+
+  Rect Rec(0, 240, 640, 240);		 
+		 
+	  rectangle(src, Rec, Scalar(255), 1, 8, 0);	 
+		 
+		 
+		 
+	  Mat Roi = src(Rec);
+  namedWindow("Step 3 Draw selected Roi", WINDOW_AUTOSIZE);
+ imshow("Step 3 Draw selected Roi", Roi);	 
+		 
+		 
+		 	
+	
+*/	
+
+	
+	
+	
+	
+	
 		
 
  	
-imshow( "Display window", src );	
 
+
+	
 	
 	
 	
@@ -382,7 +420,7 @@ int scale = 1;
 int delta = 0;
 int ddepth = CV_16S;		 
 		 
-GaussianBlur( inputImg, inputImg, Size(3,3), 0, 0, BORDER_DEFAULT );	//GaussianBlur( src, src, Size(3,3), 0, 0, BORDER_DEFAULT );		 
+GaussianBlur( src, src, Size(3,3), 0, 0, BORDER_DEFAULT );	//GaussianBlur( src, src, Size(3,3), 0, 0, BORDER_DEFAULT );		 
 		 
 cvtColor( inputImg, inputImgGray, CV_BGR2GRAY );		 // Bunu sil
 		 
@@ -391,9 +429,9 @@ Mat grad_x, grad_y;
 Mat abs_grad_x, abs_grad_y;
 
 /// Gradient X
-Sobel( inputImgGray, grad_x, ddepth, 1, 0, 3, scale, delta, BORDER_DEFAULT );   //inputImgGray i src ile değiştir
+Sobel( src, grad_x, ddepth, 1, 0, 3, scale, delta, BORDER_DEFAULT );   //inputImgGray i src ile değiştir
 /// Gradient Y
-Sobel( inputImgGray, grad_y, ddepth, 0, 1, 3, scale, delta, BORDER_DEFAULT );	//inputImgGray i src ile değiştir
+Sobel( src, grad_y, ddepth, 0, 1, 3, scale, delta, BORDER_DEFAULT );	//inputImgGray i src ile değiştir
 		 
 		 
 convertScaleAbs( grad_x, abs_grad_x );
@@ -443,9 +481,42 @@ for( size_t i = 0; i < lines.size(); i++ )
   {
     Vec4i l = lines[i];
     line( cdst, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0,0,255), 3, CV_AA);
+ 
+ 
+ 
+ 
+ 
+ 
+ /*
+		
+	// define a polygon (as a vector of points)
+
+	vector<Point> contour;
+	contour.push_back(Point(l[0], l[1]));
+	contour.push_back(Point(l[2], l[3]));
+	
+
+	// create a pointer to the data as an array of points (via a conversion to 
+	// a Mat() object)
+
+	const cv::Point *pts = (const cv::Point*) Mat(contour).data;
+	int npts = Mat(contour).rows;
+
+	std::cout << "Number of polygon vertices: " << npts << std::endl;
+	
+	// draw the polygon 
+
+	polylines(cdst, &pts,&npts, 1,
+	    		true, 			// draw closed contour (i.e. joint end to start) 
+	            Scalar(0,255,0),// colour RGB ordering (here = green) 
+	    		3, 		        // line thickness
+			    CV_AA, 0);
+			    
+						    
+	 imshow("Sobel+Canny+Houasdasdadgh Trasformation", cdst);	  */  
   }
  
- imshow("Sobel+Canny+Hough Transformation", cdst);
+ imshow("Sobel+Canny+Hough Trasformation", cdst);
  
   
 
@@ -461,9 +532,21 @@ for( size_t i = 0; i < lines.size(); i++ )
  
  
 
+			    
+	    
+			    
+			    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
  
  Mat cdst1,dst1;
-Canny(inputImg, dst1, 50, 200, 3);
+Canny(src, dst1, 50, 200, 3);
  cvtColor(dst1, cdst1, CV_GRAY2BGR);
  /*
 vector<Vec2f> lines1;
@@ -494,7 +577,7 @@ for( size_t i1 = 0; i1 < lines1.size(); i1++ )
  
  
  
- imshow("Canny+Hough Transformation", cdst1);
+ imshow("Canny+Hough Trasformation", cdst1);
  
  
  
