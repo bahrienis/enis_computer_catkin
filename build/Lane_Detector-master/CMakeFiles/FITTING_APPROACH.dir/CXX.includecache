@@ -3269,8 +3269,6 @@ mrpt/config.h
 -
 mrpt/utils/compiler_fixes.h
 -
-mrpt/utils/boost_join.h
--
 mrpt/utils/mrpt_macros.h
 -
 
@@ -3338,26 +3336,6 @@ cmath
 cstddef
 -
 
-/usr/include/mrpt/base/include/mrpt/otherlibs/stlplus/containers_fixes.hpp
-
-/usr/include/mrpt/base/include/mrpt/otherlibs/stlplus/exceptions.hpp
-containers_fixes.hpp
-/usr/include/mrpt/base/include/mrpt/otherlibs/stlplus/containers_fixes.hpp
-stdexcept
--
-string
--
-
-/usr/include/mrpt/base/include/mrpt/otherlibs/stlplus/smart_ptr.hpp
-exceptions.hpp
-/usr/include/mrpt/base/include/mrpt/otherlibs/stlplus/exceptions.hpp
-mrpt/synch/atomic_incr.h
--
-smart_ptr.tpp
-/usr/include/mrpt/base/include/mrpt/otherlibs/stlplus/smart_ptr.tpp
-
-/usr/include/mrpt/base/include/mrpt/otherlibs/stlplus/smart_ptr.tpp
-
 /usr/include/mrpt/base/include/mrpt/poses/CPoint.h
 mrpt/poses/CPoseOrPoint.h
 -
@@ -3399,23 +3377,15 @@ mrpt/utils/utils_defs.h
 -
 mrpt/math/CMatrixTemplateNumeric.h
 -
-
-/usr/include/mrpt/base/include/mrpt/synch/atomic_incr.h
-mrpt/config.h
+random
 -
-mrpt/utils/compiler_fixes.h
--
-mrpt/base/link_pragmas.h
--
-ext/atomicity.h
--
-bits/atomicity.h
+limits
 -
 
 /usr/include/mrpt/base/include/mrpt/system/datetime.h
 mrpt/base/link_pragmas.h
 -
-mrpt/utils/mrpt_stdint.h
+cstdint
 -
 string
 -
@@ -3435,7 +3405,7 @@ cstdarg
 -
 mrpt/base/link_pragmas.h
 -
-mrpt/utils/mrpt_stdint.h
+cstdint
 -
 mrpt/utils/mrpt_macros.h
 -
@@ -3445,9 +3415,11 @@ mrpt/system/memory.h
 -
 mrpt/utils/safe_pointers.h
 -
+mrpt/utils/aligned_allocator.h
+-
 vector
 -
-mrpt/otherlibs/stlplus/smart_ptr.hpp
+memory
 -
 
 /usr/include/mrpt/base/include/mrpt/utils/COutputLogger.h
@@ -3483,11 +3455,7 @@ mrpt/utils/types_simple.h
 /usr/include/mrpt/base/include/mrpt/utils/CTicTac.h
 mrpt/base/link_pragmas.h
 -
-mrpt/utils/CUncopiable.h
--
-
-/usr/include/mrpt/base/include/mrpt/utils/CUncopiable.h
-mrpt/base/link_pragmas.h
+type_traits
 -
 
 /usr/include/mrpt/base/include/mrpt/utils/TEnumType.h
@@ -3503,9 +3471,17 @@ mrpt/base/link_pragmas.h
 -
 
 /usr/include/mrpt/base/include/mrpt/utils/TTypeName.h
-mrpt/utils/mrpt_stdint.h
+cstdint
 -
 string
+-
+
+/usr/include/mrpt/base/include/mrpt/utils/aligned_allocator.h
+type_traits
+-
+memory
+-
+mrpt/system/memory.h
 -
 
 /usr/include/mrpt/base/include/mrpt/utils/bimap.h
@@ -3525,10 +3501,8 @@ mrpt/base/link_pragmas.h
 -
 mrpt/utils/mrpt_macros.h
 -
-mrpt/utils/mrpt_stdint.h
+cstdint
 -
-
-/usr/include/mrpt/base/include/mrpt/utils/boost_join.h
 
 /usr/include/mrpt/base/include/mrpt/utils/compiler_fixes.h
 
@@ -3536,8 +3510,6 @@ mrpt/utils/mrpt_stdint.h
 mrpt/config.h
 -
 mrpt/utils/compiler_fixes.h
--
-mrpt/utils/boost_join.h
 -
 mrpt/utils/mrpt_macros.h
 -
@@ -3552,30 +3524,8 @@ sstream
 stdexcept
 -
 
-/usr/include/mrpt/base/include/mrpt/utils/mrpt_stdint.h
-mrpt/config.h
--
-stdint.h
--
-pstdint.h
-/usr/include/mrpt/base/include/mrpt/utils/pstdint.h
-
-/usr/include/mrpt/base/include/mrpt/utils/pstdint.h
-stddef.h
--
-limits.h
--
-signal.h
--
-stdint.h
--
-wchar.h
--
-
 /usr/include/mrpt/base/include/mrpt/utils/safe_pointers.h
 mrpt/config.h
--
-mrpt/utils/boost_join.h
 -
 mrpt/utils/mrpt_macros.h
 -
@@ -3605,7 +3555,7 @@ vector
 -
 string
 -
-mrpt/utils/mrpt_stdint.h
+cstdint
 -
 
 /usr/include/mrpt/base/include/mrpt/utils/utils_defs.h

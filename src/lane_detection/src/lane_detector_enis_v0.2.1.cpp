@@ -68,6 +68,17 @@
 
 
 
+
+
+
+
+
+
+
+ 
+ 
+
+
 using namespace std; 
 using namespace cv;
 
@@ -146,6 +157,54 @@ int main(int argc, char **argv)
   
   
   
+  		 
+//Get and show an image	 
+
+
+
+//const char* filename = argc >= 2 ? argv[1] : "/home/enis/Schreibtisch/deneme2/frame" + std::to_string(count) + ".jpg";
+//const char* filename = argc >= 2 ? argv[1] : "/home/enis/Schreibtisch/deneme2/frame22.jpg";
+
+std::string filename = "/home/enis/Schreibtisch/deneme2/frame8.jpg";
+
+
+
+
+
+
+
+ Mat src = imread(filename, 0);
+ if(src.empty())
+ {
+     cout << "can not open " << filename << endl;
+     return -1;
+ }
+ 	 
+	
+	
+imshow( "Display window", src );	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -181,6 +240,10 @@ int main(int argc, char **argv)
 	
 	
 	
+	
+	
+
+
 
 	cout << "Frame size: " << dWidth << " x " << dHeight << endl;
 	
@@ -197,8 +260,7 @@ int main(int argc, char **argv)
 	
 	
 	
-	
-	
+
 	
 	
 	
@@ -272,7 +334,7 @@ inRange(outputImg1, Scalar(150,150,150),Scalar(255,255,255),outputImg2);
 
 
 
-/*
+
 
 
 
@@ -289,7 +351,7 @@ int scale = 1;
 int delta = 0;
 int ddepth = CV_16S;		 
 		 
-GaussianBlur( outputImg1, outputImg1, Size(3,3), 0, 0, BORDER_DEFAULT );	//GaussianBlur( src, src, Size(3,3), 0, 0, BORDER_DEFAULT );		 
+GaussianBlur( outputImg2, outputImg2, Size(5,5), 0, 0, BORDER_DEFAULT );	//GaussianBlur( src, src, Size(3,3), 0, 0, BORDER_DEFAULT );		 
 		 
 //cvtColor( outputImg, inputImgGray, CV_BGR2GRAY );		 // Bunu sil
 		 
@@ -298,9 +360,9 @@ Mat grad_x, grad_y;
 Mat abs_grad_x, abs_grad_y;
 
 /// Gradient X
-Sobel( outputImg1, grad_x, ddepth, 1, 0, 3, scale, delta, BORDER_DEFAULT );   //inputImgGray i src ile değiştir
+Sobel( outputImg2, grad_x, ddepth, 1, 0, 3, scale, delta, BORDER_DEFAULT );   //inputImgGray i src ile değiştir
 /// Gradient Y
-Sobel( outputImg1, grad_y, ddepth, 0, 1, 3, scale, delta, BORDER_DEFAULT );	//inputImgGray i src ile değiştir
+Sobel( outputImg2, grad_y, ddepth, 0, 1, 3, scale, delta, BORDER_DEFAULT );	//inputImgGray i src ile değiştir
 		 
 		 
 convertScaleAbs( grad_x, abs_grad_x );
@@ -315,7 +377,7 @@ imshow( "Sobel", grad );
 		 
 
 
- */
+ 
 
 		 
 	
@@ -323,7 +385,7 @@ imshow( "Sobel", grad );
 
 
 Mat cdst,dst;
-Canny(outputImg2, dst, 50, 200, 3);
+Canny(grad, dst, 50, 200, 3);
 cvtColor(dst, cdst, CV_GRAY2BGR);
  
  
@@ -341,6 +403,37 @@ cvtColor(dst, cdst, CV_GRAY2BGR);
  imshow("Sobel+Canny+Hough Trasformation", cdst);
  
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
 
 
 
@@ -404,7 +497,8 @@ cvtColor(dst, cdst, CV_GRAY2BGR);
 	
 	}
 
-    
+
+
   
   
   
@@ -415,37 +509,6 @@ cvtColor(dst, cdst, CV_GRAY2BGR);
   
   
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

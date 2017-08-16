@@ -2286,6 +2286,100 @@ clean: Lane_Detector-master/CMakeFiles/lane_detector_generate_messages_nodejs.di
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory my_first_awesome_pkg
+
+# Convenience name for "all" pass in the directory.
+my_first_awesome_pkg/all: my_first_awesome_pkg/CMakeFiles/talker_node.dir/all
+my_first_awesome_pkg/all: my_first_awesome_pkg/CMakeFiles/listener_node.dir/all
+
+.PHONY : my_first_awesome_pkg/all
+
+# Convenience name for "clean" pass in the directory.
+my_first_awesome_pkg/clean: my_first_awesome_pkg/CMakeFiles/talker_node.dir/clean
+my_first_awesome_pkg/clean: my_first_awesome_pkg/CMakeFiles/listener_node.dir/clean
+
+.PHONY : my_first_awesome_pkg/clean
+
+# Convenience name for "preinstall" pass in the directory.
+my_first_awesome_pkg/preinstall:
+
+.PHONY : my_first_awesome_pkg/preinstall
+
+#=============================================================================
+# Target rules for target my_first_awesome_pkg/CMakeFiles/talker_node.dir
+
+# All Build rule for target.
+my_first_awesome_pkg/CMakeFiles/talker_node.dir/all:
+	$(MAKE) -f my_first_awesome_pkg/CMakeFiles/talker_node.dir/build.make my_first_awesome_pkg/CMakeFiles/talker_node.dir/depend
+	$(MAKE) -f my_first_awesome_pkg/CMakeFiles/talker_node.dir/build.make my_first_awesome_pkg/CMakeFiles/talker_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/enis/catkin_ws/build/CMakeFiles --progress-num=41,42 "Built target talker_node"
+.PHONY : my_first_awesome_pkg/CMakeFiles/talker_node.dir/all
+
+# Include target in all.
+all: my_first_awesome_pkg/CMakeFiles/talker_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+my_first_awesome_pkg/CMakeFiles/talker_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/enis/catkin_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 my_first_awesome_pkg/CMakeFiles/talker_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/enis/catkin_ws/build/CMakeFiles 0
+.PHONY : my_first_awesome_pkg/CMakeFiles/talker_node.dir/rule
+
+# Convenience name for target.
+talker_node: my_first_awesome_pkg/CMakeFiles/talker_node.dir/rule
+
+.PHONY : talker_node
+
+# clean rule for target.
+my_first_awesome_pkg/CMakeFiles/talker_node.dir/clean:
+	$(MAKE) -f my_first_awesome_pkg/CMakeFiles/talker_node.dir/build.make my_first_awesome_pkg/CMakeFiles/talker_node.dir/clean
+.PHONY : my_first_awesome_pkg/CMakeFiles/talker_node.dir/clean
+
+# clean rule for target.
+clean: my_first_awesome_pkg/CMakeFiles/talker_node.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target my_first_awesome_pkg/CMakeFiles/listener_node.dir
+
+# All Build rule for target.
+my_first_awesome_pkg/CMakeFiles/listener_node.dir/all:
+	$(MAKE) -f my_first_awesome_pkg/CMakeFiles/listener_node.dir/build.make my_first_awesome_pkg/CMakeFiles/listener_node.dir/depend
+	$(MAKE) -f my_first_awesome_pkg/CMakeFiles/listener_node.dir/build.make my_first_awesome_pkg/CMakeFiles/listener_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/enis/catkin_ws/build/CMakeFiles --progress-num=37,38 "Built target listener_node"
+.PHONY : my_first_awesome_pkg/CMakeFiles/listener_node.dir/all
+
+# Include target in all.
+all: my_first_awesome_pkg/CMakeFiles/listener_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+my_first_awesome_pkg/CMakeFiles/listener_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/enis/catkin_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 my_first_awesome_pkg/CMakeFiles/listener_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/enis/catkin_ws/build/CMakeFiles 0
+.PHONY : my_first_awesome_pkg/CMakeFiles/listener_node.dir/rule
+
+# Convenience name for target.
+listener_node: my_first_awesome_pkg/CMakeFiles/listener_node.dir/rule
+
+.PHONY : listener_node
+
+# clean rule for target.
+my_first_awesome_pkg/CMakeFiles/listener_node.dir/clean:
+	$(MAKE) -f my_first_awesome_pkg/CMakeFiles/listener_node.dir/build.make my_first_awesome_pkg/CMakeFiles/listener_node.dir/clean
+.PHONY : my_first_awesome_pkg/CMakeFiles/listener_node.dir/clean
+
+# clean rule for target.
+clean: my_first_awesome_pkg/CMakeFiles/listener_node.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Directory level rules for directory lane_detection
 
 # Convenience name for "all" pass in the directory.
@@ -2365,7 +2459,7 @@ opencv_tutorial/preinstall:
 opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/all:
 	$(MAKE) -f opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build.make opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/depend
 	$(MAKE) -f opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build.make opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/enis/catkin_ws/build/CMakeFiles --progress-num=37,38 "Built target opencv_tutorial_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/enis/catkin_ws/build/CMakeFiles --progress-num=39,40 "Built target opencv_tutorial_node"
 .PHONY : opencv_tutorial/CMakeFiles/opencv_tutorial_node.dir/all
 
 # Include target in all.
@@ -2523,7 +2617,7 @@ clean: usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
 usb_cam/CMakeFiles/usb_cam_node.dir/all: usb_cam/CMakeFiles/usb_cam.dir/all
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/depend
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/enis/catkin_ws/build/CMakeFiles --progress-num=41,42 "Built target usb_cam_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/enis/catkin_ws/build/CMakeFiles --progress-num=45,46 "Built target usb_cam_node"
 .PHONY : usb_cam/CMakeFiles/usb_cam_node.dir/all
 
 # Include target in all.
@@ -2560,7 +2654,7 @@ clean: usb_cam/CMakeFiles/usb_cam_node.dir/clean
 usb_cam/CMakeFiles/usb_cam.dir/all:
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/depend
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/enis/catkin_ws/build/CMakeFiles --progress-num=39,40 "Built target usb_cam"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/enis/catkin_ws/build/CMakeFiles --progress-num=43,44 "Built target usb_cam"
 .PHONY : usb_cam/CMakeFiles/usb_cam.dir/all
 
 # Include target in all.

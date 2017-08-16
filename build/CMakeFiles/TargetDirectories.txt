@@ -81,6 +81,15 @@
 /home/enis/catkin_ws/build/Lane_Detector-master/CMakeFiles/list_install_components.dir
 /home/enis/catkin_ws/build/Lane_Detector-master/CMakeFiles/roscpp_generate_messages_eus.dir
 /home/enis/catkin_ws/build/Lane_Detector-master/CMakeFiles/lane_detector_generate_messages_nodejs.dir
+/home/enis/catkin_ws/build/my_first_awesome_pkg/CMakeFiles/list_install_components.dir
+/home/enis/catkin_ws/build/my_first_awesome_pkg/CMakeFiles/install.dir
+/home/enis/catkin_ws/build/my_first_awesome_pkg/CMakeFiles/rebuild_cache.dir
+/home/enis/catkin_ws/build/my_first_awesome_pkg/CMakeFiles/edit_cache.dir
+/home/enis/catkin_ws/build/my_first_awesome_pkg/CMakeFiles/test.dir
+/home/enis/catkin_ws/build/my_first_awesome_pkg/CMakeFiles/talker_node.dir
+/home/enis/catkin_ws/build/my_first_awesome_pkg/CMakeFiles/listener_node.dir
+/home/enis/catkin_ws/build/my_first_awesome_pkg/CMakeFiles/install/strip.dir
+/home/enis/catkin_ws/build/my_first_awesome_pkg/CMakeFiles/install/local.dir
 /home/enis/catkin_ws/build/lane_detection/CMakeFiles/list_install_components.dir
 /home/enis/catkin_ws/build/lane_detection/CMakeFiles/install.dir
 /home/enis/catkin_ws/build/lane_detection/CMakeFiles/rebuild_cache.dir

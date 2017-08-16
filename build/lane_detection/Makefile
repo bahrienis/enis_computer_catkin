@@ -180,32 +180,32 @@ lane_detection_node/fast:
 	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/build
 .PHONY : lane_detection_node/fast
 
-src/lane_detector_enis_v0.2.1.o: src/lane_detector_enis_v0.2.1.cpp.o
+src/lane_detector_enis_v0.1.2.o: src/lane_detector_enis_v0.1.2.cpp.o
 
-.PHONY : src/lane_detector_enis_v0.2.1.o
+.PHONY : src/lane_detector_enis_v0.1.2.o
 
 # target to build an object file
-src/lane_detector_enis_v0.2.1.cpp.o:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/lane_detector_enis_v0.2.1.cpp.o
-.PHONY : src/lane_detector_enis_v0.2.1.cpp.o
+src/lane_detector_enis_v0.1.2.cpp.o:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/lane_detector_enis_v0.1.2.cpp.o
+.PHONY : src/lane_detector_enis_v0.1.2.cpp.o
 
-src/lane_detector_enis_v0.2.1.i: src/lane_detector_enis_v0.2.1.cpp.i
+src/lane_detector_enis_v0.1.2.i: src/lane_detector_enis_v0.1.2.cpp.i
 
-.PHONY : src/lane_detector_enis_v0.2.1.i
+.PHONY : src/lane_detector_enis_v0.1.2.i
 
 # target to preprocess a source file
-src/lane_detector_enis_v0.2.1.cpp.i:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/lane_detector_enis_v0.2.1.cpp.i
-.PHONY : src/lane_detector_enis_v0.2.1.cpp.i
+src/lane_detector_enis_v0.1.2.cpp.i:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/lane_detector_enis_v0.1.2.cpp.i
+.PHONY : src/lane_detector_enis_v0.1.2.cpp.i
 
-src/lane_detector_enis_v0.2.1.s: src/lane_detector_enis_v0.2.1.cpp.s
+src/lane_detector_enis_v0.1.2.s: src/lane_detector_enis_v0.1.2.cpp.s
 
-.PHONY : src/lane_detector_enis_v0.2.1.s
+.PHONY : src/lane_detector_enis_v0.1.2.s
 
 # target to generate assembly for a file
-src/lane_detector_enis_v0.2.1.cpp.s:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/lane_detector_enis_v0.2.1.cpp.s
-.PHONY : src/lane_detector_enis_v0.2.1.cpp.s
+src/lane_detector_enis_v0.1.2.cpp.s:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/lane_detector_enis_v0.1.2.cpp.s
+.PHONY : src/lane_detector_enis_v0.1.2.cpp.s
 
 # Help Target
 help:
@@ -221,9 +221,9 @@ help:
 	@echo "... test"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... src/lane_detector_enis_v0.2.1.o"
-	@echo "... src/lane_detector_enis_v0.2.1.i"
-	@echo "... src/lane_detector_enis_v0.2.1.s"
+	@echo "... src/lane_detector_enis_v0.1.2.o"
+	@echo "... src/lane_detector_enis_v0.1.2.i"
+	@echo "... src/lane_detector_enis_v0.1.2.s"
 .PHONY : help
 
 

@@ -1,2 +1,2 @@
-Lane_Detector-master:lane_detection:opencv_tutorial:usb_cam
+Lane_Detector-master:lane_detection:my_first_awesome_pkg:opencv_tutorial:usb_cam
 -DCATKIN_DEVEL_PREFIX=/home/enis/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/enis/catkin_ws/install -G Unix Makefiles

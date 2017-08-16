@@ -422,10 +422,6 @@ Lane_Detector-master/CMakeFiles/FITTING_APPROACH.dir/src/fittingApproach.cpp.o
  /usr/include/mrpt/base/include/mrpt/math/point_poses2vectors.h
  /usr/include/mrpt/base/include/mrpt/math/ransac.h
  /usr/include/mrpt/base/include/mrpt/math/wrap2pi.h
- /usr/include/mrpt/base/include/mrpt/otherlibs/stlplus/containers_fixes.hpp
- /usr/include/mrpt/base/include/mrpt/otherlibs/stlplus/exceptions.hpp
- /usr/include/mrpt/base/include/mrpt/otherlibs/stlplus/smart_ptr.hpp
- /usr/include/mrpt/base/include/mrpt/otherlibs/stlplus/smart_ptr.tpp
  /usr/include/mrpt/base/include/mrpt/poses/CPoint.h
  /usr/include/mrpt/base/include/mrpt/poses/CPoint2D.h
  /usr/include/mrpt/base/include/mrpt/poses/CPoseOrPoint.h
@@ -433,7 +429,6 @@ Lane_Detector-master/CMakeFiles/FITTING_APPROACH.dir/src/fittingApproach.cpp.o
  /usr/include/mrpt/base/include/mrpt/poses/poses_frwds.h
  /usr/include/mrpt/base/include/mrpt/random.h
  /usr/include/mrpt/base/include/mrpt/random/RandomGenerators.h
- /usr/include/mrpt/base/include/mrpt/synch/atomic_incr.h
  /usr/include/mrpt/base/include/mrpt/system/datetime.h
  /usr/include/mrpt/base/include/mrpt/system/memory.h
  /usr/include/mrpt/base/include/mrpt/system/os.h
@@ -441,18 +436,15 @@ Lane_Detector-master/CMakeFiles/FITTING_APPROACH.dir/src/fittingApproach.cpp.o
  /usr/include/mrpt/base/include/mrpt/utils/COutputLogger.h
  /usr/include/mrpt/base/include/mrpt/utils/CSerializable.h
  /usr/include/mrpt/base/include/mrpt/utils/CTicTac.h
- /usr/include/mrpt/base/include/mrpt/utils/CUncopiable.h
  /usr/include/mrpt/base/include/mrpt/utils/TEnumType.h
  /usr/include/mrpt/base/include/mrpt/utils/TPixelCoord.h
  /usr/include/mrpt/base/include/mrpt/utils/TTypeName.h
+ /usr/include/mrpt/base/include/mrpt/utils/aligned_allocator.h
  /usr/include/mrpt/base/include/mrpt/utils/bimap.h
  /usr/include/mrpt/base/include/mrpt/utils/bits.h
- /usr/include/mrpt/base/include/mrpt/utils/boost_join.h
  /usr/include/mrpt/base/include/mrpt/utils/compiler_fixes.h
  /usr/include/mrpt/base/include/mrpt/utils/core_defs.h
  /usr/include/mrpt/base/include/mrpt/utils/mrpt_macros.h
- /usr/include/mrpt/base/include/mrpt/utils/mrpt_stdint.h
- /usr/include/mrpt/base/include/mrpt/utils/pstdint.h
  /usr/include/mrpt/base/include/mrpt/utils/safe_pointers.h
  /usr/include/mrpt/base/include/mrpt/utils/types_math.h
  /usr/include/mrpt/base/include/mrpt/utils/types_simple.h
