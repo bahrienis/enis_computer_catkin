@@ -9,6 +9,8 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
 )
 
+find_package(OpenCV REQUIRED)
+
 catkin_package()
 
 include_directories(
@@ -22,7 +24,7 @@ target_link_libraries(talker_node
    ${catkin_LIBRARIES}
    )
    
-add_executable(listener_node src/listener_node.cpp)
+add_executable(listener_node src/listener_node_v0.0.3.cpp)
 target_link_libraries(listener_node
    ${OpenCV_LIBRARIES}
    ${catkin_LIBRARIES}

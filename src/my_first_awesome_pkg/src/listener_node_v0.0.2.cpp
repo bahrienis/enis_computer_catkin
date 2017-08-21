@@ -1,4 +1,114 @@
+/*
+
+
 // Autor : Bahri Enis Demirtel
+
+
+#include <ros/ros.h>
+#include <image_transport/image_transport.h>
+#include <cv_bridge/cv_bridge.h>
+#include <sensor_msgs/image_encodings.h>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <iostream>
+
+
+#include <stdio.h>  
+#include <string.h> 
+#include <unistd.h>  
+#include <fcntl.h>  
+#include <errno.h>   
+#include <termios.h> 
+#include "opencv2/core/core.hpp"
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
+#include <iostream>
+#include <stdio.h>
+#include <ctime>
+
+
+
+#include "opencv2/imgcodecs.hpp"
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
+
+#include <cv_bridge/cv_bridge.h>
+#include <sensor_msgs/image_encodings.h>
+
+
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+
+using namespace std; 
+using namespace cv;
+
+
+
+
+
+
+
+
+
+    void imageCallback(const sensor_msgs::ImageConstPtr& msg)
+    {
+      try
+      {
+     //  cv::imshow("view", cv_bridge::toCvShare(msg, "bgr8")->image);
+       
+       //namedWindow("MyVideo", CV_WINDOW_AUTOSIZE); //create a window called "MyVideo" 
+       Mat inputImg;
+      inputImg = cv_bridge::toCvShare(msg, "bgr8")->image;
+      cv::imshow("view", inputImg);
+      
+   
+       
+       
+       
+       
+       cv::waitKey(30);
+     }
+     catch (cv_bridge::Exception& e)
+     {
+       ROS_ERROR("Could not convert from '%s' to 'bgr8'.", msg->encoding.c_str());
+     }
+   }
+   
+   int main(int argc, char **argv)
+   {
+     ros::init(argc, argv, "image_listener");
+     ros::NodeHandle node_handle;
+    // cv::namedWindow("view");
+     namedWindow("MyVideo", CV_WINDOW_AUTOSIZE); //create a window called "MyVideo"
+  //  cv::startWindowThread();
+     image_transport::ImageTransport it(node_handle);
+     ros::Subscriber sub = node_handle.subscribe("camera/image", 1, imageCallback);
+     ros::spin();
+   //  cv::destroyWindow("view");
+   }
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+#include "IPM.h"
+#include "IPM.cpp"
+
+
+
+
+
+
 
 
 
@@ -12,37 +122,12 @@
 #include <iostream>
 
 
-
-
-
-
-
-
-
-
-
-#include <stdio.h>   /* Standard input/output definitions */
-#include <string.h>  /* String function definitions */
-#include <unistd.h>  /* UNIX standard function definitions */
-#include <fcntl.h>   /* File control definitions */
-#include <errno.h>   /* Error number definitions */
-#include <termios.h> /* POSIX terminal control definitions */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#include <stdio.h>  
+#include <string.h> 
+#include <unistd.h>  
+#include <fcntl.h>  
+#include <errno.h>   
+#include <termios.h> 
 #include "opencv2/core/core.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
@@ -50,26 +135,14 @@
 #include <stdio.h>
 #include <ctime>
 
-#include "IPM.h"
-#include "IPM.cpp"
-
-
-
-
 
 
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 
-
-
-
-
-
-
-
-
+#include <cv_bridge/cv_bridge.h>
+#include <sensor_msgs/image_encodings.h>
 
 
 
@@ -78,15 +151,12 @@
 #include<iomanip>
 #include<cmath>
 
-
-
-
-
 using namespace std; 
 using namespace cv;
 
 
 
+int frameNum=0;	
 
 
 
@@ -95,192 +165,108 @@ using namespace cv;
 
 
 
-
-/* INTERNAL CAM TEST CODE */
-/* REF: https://www.youtube.com/watch?v=HqNJbx0uAv0 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-int main(int argc, char **argv)
-{
-	
-	
-	
-	
-	
-	
-	
-  
-  
-    //SetUP ROS.
-  ros::init(argc, argv, "lane_detector_enis");
-
-
-  
-  
-  
-  
-	
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  //CV_CAP_ANY == 0 yazınca 2. kamera açılır.
-  
-      VideoCapture cap(CV_CAP_ANY ); // OPENT THE VIDEO CAMERO NO. 0
-      
-      
-      cap.set(CV_CAP_PROP_FPS,30);		//change the frame value
-      
-      
-      
-      
-
-	if(!cap.isOpened()) //if not success, exit program
-	{
-		cout<<"Cannot open the video cam" << endl;
-	}
-
-	double dWidth = cap.get(CV_CAP_PROP_FRAME_WIDTH); //get the width of frames of te video
-	double dHeight = cap.get(CV_CAP_PROP_FRAME_HEIGHT);
-	
-	
-	
-	
-	
-	
-//	cap.set(CV_CAP_PROP_FPS,30);		//change the frame value
-
-	
-	
-	
-	double dFrame = cap.get(CV_CAP_PROP_FPS);
-	
-	
-	
-	cout << "FPS value is " << dFrame << endl;
-	
-	
-	
-
-	cout << "Frame size: " << dWidth << " x " << dHeight << endl;
-	
-	
-	namedWindow("MyVideo", CV_WINDOW_AUTOSIZE); //create a window called "MyVideo"
-	
-	//while(1)
-	//{
-		Mat inputImg;
-		Mat inputImgGray;
-		Mat outputImg;
-	
-	
-	cv::VideoCapture video;
+    void imageCallback(const sensor_msgs::ImageConstPtr& msg)
+    {
 		
 
-
- 
+	
+      try
+      {
+		  
+		  
+		  
+		  
+			  clock_t begin = clock();    
+         
+		  
+		
+		  
+		  
+		  
+     //  cv::imshow("view", cv_bridge::toCvShare(msg, "bgr8")->image);
+       
+       //namedWindow("MyVideo", CV_WINDOW_AUTOSIZE); //create a window called "MyVideo" 
+       //Mat inputImg;
+       Mat inputImgGray;
+		Mat outputImg;
+       
+       
+       
   
- 
- 
- 
- 	// Main loop
-	int frameNum = 0;
-	for( ; ; )
-	{
-		printf("FRAME #%6d ", frameNum);
+                                       
+      cv::Mat inputImg= cv_bridge::toCvShare(msg, "bgr8")->image;              
+                             
+                             
+     // inputImg= cv_bridge::toCvShare(msg, "bgra8")->image;
+      cv::imshow("MyVideo", inputImg);
+  
+     
+       
+       
+       
+        
+         
+       
+       
+       
+		
+	
+
+       
+       
+       
+       
+       
+       
+    
+       
+       
+       
+     
+       printf("FRAME #%6d \n", frameNum);
 		fflush(stdout);
 		frameNum++;
+  
 
-
-
-
-
-
-
-
-
-bool bSuccess = cap.read(inputImg);
-
-
-
-
-
-
-
-
-
-
- 
-
-
- 
- // The 4-points at the input image	
+  
+       
+       
+       		 
+       
+     
+       
+       
+       
+       
+       
+       // The 4-points at the input image	
 	vector<Point2f> origPoints;
-	origPoints.push_back( Point2f(0, dHeight) );
-	origPoints.push_back( Point2f(dWidth, dHeight) );
-	origPoints.push_back( Point2f(dWidth, 80) );
+	origPoints.push_back( Point2f(0, 480) );
+	origPoints.push_back( Point2f(640, 480) );
+	origPoints.push_back( Point2f(640, 80) );
 	origPoints.push_back( Point2f(0, 80) );
   	 
 	// The 4-points correspondences in the destination image
 	vector<Point2f> dstPoints;
-	dstPoints.push_back( Point2f(dWidth/2-50, dHeight) );
-	dstPoints.push_back( Point2f(dWidth/2+50, dHeight) );
-	dstPoints.push_back( Point2f(dWidth, 0) );
+	dstPoints.push_back( Point2f((640/2)-50, 480) );
+	dstPoints.push_back( Point2f((640/2)+50, 480) );
+	dstPoints.push_back( Point2f(640, 0) );
 	dstPoints.push_back( Point2f(0, 0));
 	
 	// IPM object
 	
 	 
 	 
-	IPM ipm( Size(dWidth, dHeight), Size(dWidth, dHeight), origPoints, dstPoints );
+	IPM ipm( Size(640, 480), Size(640, 480), origPoints, dstPoints );
 	
 	
 	
 	
-
-	
-	
-	
-	
-	
-	
-	
-
-
-
 
 	
 	
 		 // Process
-		 clock_t begin = clock();
-	
+		
 	
 	
 	
@@ -290,13 +276,13 @@ bool bSuccess = cap.read(inputImg);
 	
 		 ipm.applyHomography( inputImg, outputImg );	
 
+	
 	 	 
-		 clock_t end = clock();
-		 double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
-		 printf("%.2f (ms)\r", 1000*elapsed_secs);
-	//	 cout << 1000*elapsed_secs <<endl;
 		
 		
+	
+
+	
 	
 		
 		  
@@ -309,8 +295,8 @@ bool bSuccess = cap.read(inputImg);
 		 
 		 
 		 
-		 
-		 
+
+	
 	
 	
 	
@@ -363,9 +349,7 @@ uchar red1 = intensity1.val[2];
 		 
 		 
 		 
-		 
-		 
-		 
+		
 		 
 		 
 		 
@@ -383,9 +367,27 @@ uchar red1 = intensity1.val[2];
 
 
 
-		 
-		 
-		 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	
 		 
@@ -457,16 +459,20 @@ cvtColor(dst, cdst, CV_GRAY2BGR);
    
    
    
-   
-   
-   
-   
-  
-    
-  
+
    
       x[i]=l[0];
     y[i]=l[1];
+   
+   
+   
+
+   
+   
+   
+   
+   
+   
    
    
    
@@ -594,7 +600,7 @@ cvtColor(dst, cdst, CV_GRAY2BGR);
    {
 	   r=a[0] + a[1] * p + a[2] * p * p;
 	   if(r>=0 && r<=640)
-	   cout<<p<< " degeri " <<r<<endl;
+	  // cout<<p<< " degeri " <<r<<endl;
 	   circle( cdst, Point(p, r), 1, Scalar(0,255,0), 1, CV_AA, 0);
 	   }
    
@@ -623,11 +629,6 @@ cvtColor(dst, cdst, CV_GRAY2BGR);
    
    
    
-   
-   
- 
- 
-  
 
 
 
@@ -636,55 +637,148 @@ cvtColor(dst, cdst, CV_GRAY2BGR);
 	
 		 waitKey(1);
 		 
-	}
 
-	return 0;
-	
-	
 
-	
-	}
-  //  }
-    
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+clock_t end = clock();
+
+
  
+		 double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
+		 printf("%.2f   (ms)\r", 1000*elapsed_secs);
+		 cout << 1000*elapsed_secs <<endl;
+
+
+
+
+
+
+	
+	
+		 
+	}
+
+
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+       
+       
+       
+      
+       
+       
+       
+       
+       
+     	 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     
+     catch (cv_bridge::Exception& e)
+     {
+       ROS_ERROR("Could not convert from '%s' to 'bgr8'.", msg->encoding.c_str());
+     }
+   }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   int main(int argc, char **argv)
+   {
   
+     
+     
+        ros::init(argc, argv, "image_listener");
   
-  
-  
-  
+     
+
+
+     
+       ros::NodeHandle node_handle;
+    // cv::namedWindow("view");
+     namedWindow("MyVideo", CV_WINDOW_AUTOSIZE); //create a window called "MyVideo"
+  //  cv::startWindowThread();
+     
+image_transport::ImageTransport it(node_handle);
 
 
 
+     ros::Subscriber sub = node_handle.subscribe("camera/image", 1, imageCallback);
+     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     
+     ros::spin();
+     
+    //} 
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+   //  cv::destroyWindow("view");
+   }
 
 
 
