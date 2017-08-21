@@ -24,7 +24,7 @@ target_link_libraries(talker_node
    ${catkin_LIBRARIES}
    )
    
-add_executable(listener_node src/listener_node_v0.0.3.cpp)
+add_executable(listener_node src/listener_node_v0.0.4.cpp)
 target_link_libraries(listener_node
    ${OpenCV_LIBRARIES}
    ${catkin_LIBRARIES}

@@ -57,38 +57,38 @@ include my_first_awesome_pkg/CMakeFiles/listener_node.dir/progress.make
 # Include the compile flags for this target's objects.
 include my_first_awesome_pkg/CMakeFiles/listener_node.dir/flags.make
 
-my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.o: my_first_awesome_pkg/CMakeFiles/listener_node.dir/flags.make
-my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.o: /home/enis/catkin_ws/src/my_first_awesome_pkg/src/listener_node_v0.0.3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/enis/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.o"
-	cd /home/enis/catkin_ws/build/my_first_awesome_pkg && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.o -c /home/enis/catkin_ws/src/my_first_awesome_pkg/src/listener_node_v0.0.3.cpp
+my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.o: my_first_awesome_pkg/CMakeFiles/listener_node.dir/flags.make
+my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.o: /home/enis/catkin_ws/src/my_first_awesome_pkg/src/listener_node_v0.0.4.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/enis/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.o"
+	cd /home/enis/catkin_ws/build/my_first_awesome_pkg && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.o -c /home/enis/catkin_ws/src/my_first_awesome_pkg/src/listener_node_v0.0.4.cpp
 
-my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.i"
-	cd /home/enis/catkin_ws/build/my_first_awesome_pkg && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/enis/catkin_ws/src/my_first_awesome_pkg/src/listener_node_v0.0.3.cpp > CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.i
+my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.i"
+	cd /home/enis/catkin_ws/build/my_first_awesome_pkg && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/enis/catkin_ws/src/my_first_awesome_pkg/src/listener_node_v0.0.4.cpp > CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.i
 
-my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.s"
-	cd /home/enis/catkin_ws/build/my_first_awesome_pkg && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/enis/catkin_ws/src/my_first_awesome_pkg/src/listener_node_v0.0.3.cpp -o CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.s
+my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.s"
+	cd /home/enis/catkin_ws/build/my_first_awesome_pkg && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/enis/catkin_ws/src/my_first_awesome_pkg/src/listener_node_v0.0.4.cpp -o CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.s
 
-my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.o.requires:
+my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.o.requires:
 
-.PHONY : my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.o.requires
+.PHONY : my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.o.requires
 
-my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.o.provides: my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.o.requires
-	$(MAKE) -f my_first_awesome_pkg/CMakeFiles/listener_node.dir/build.make my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.o.provides.build
-.PHONY : my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.o.provides
+my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.o.provides: my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.o.requires
+	$(MAKE) -f my_first_awesome_pkg/CMakeFiles/listener_node.dir/build.make my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.o.provides.build
+.PHONY : my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.o.provides
 
-my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.o.provides.build: my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.o
+my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.o.provides.build: my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.o
 
 
 # Object files for target listener_node
 listener_node_OBJECTS = \
-"CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.o"
+"CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.o"
 
 # External object files for target listener_node
 listener_node_EXTERNAL_OBJECTS =
 
-/home/enis/catkin_ws/devel/lib/my_first_awesome_pkg/listener_node: my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.o
+/home/enis/catkin_ws/devel/lib/my_first_awesome_pkg/listener_node: my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.o
 /home/enis/catkin_ws/devel/lib/my_first_awesome_pkg/listener_node: my_first_awesome_pkg/CMakeFiles/listener_node.dir/build.make
 /home/enis/catkin_ws/devel/lib/my_first_awesome_pkg/listener_node: /opt/ros/kinetic/lib/libopencv_stitching3.so.3.2.0
 /home/enis/catkin_ws/devel/lib/my_first_awesome_pkg/listener_node: /opt/ros/kinetic/lib/libopencv_superres3.so.3.2.0
@@ -213,7 +213,7 @@ my_first_awesome_pkg/CMakeFiles/listener_node.dir/build: /home/enis/catkin_ws/de
 
 .PHONY : my_first_awesome_pkg/CMakeFiles/listener_node.dir/build
 
-my_first_awesome_pkg/CMakeFiles/listener_node.dir/requires: my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.3.cpp.o.requires
+my_first_awesome_pkg/CMakeFiles/listener_node.dir/requires: my_first_awesome_pkg/CMakeFiles/listener_node.dir/src/listener_node_v0.0.4.cpp.o.requires
 
 .PHONY : my_first_awesome_pkg/CMakeFiles/listener_node.dir/requires
 

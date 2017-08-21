@@ -236,157 +236,6 @@ int frameNum=0;
      
       
       
-      
-      
-      
-      
-       clock_t begin_IPM = clock();   
-       
-       
-       
-       
-        
-       
-       
-       
-       
-       // The 4-points at the input image	
-	vector<Point2f> origPoints;
-	origPoints.push_back( Point2f(0, 480) );
-	origPoints.push_back( Point2f(640, 480) );
-	origPoints.push_back( Point2f(640, 80) );
-	origPoints.push_back( Point2f(0, 80) );
-  	 
-	// The 4-points correspondences in the destination image
-	vector<Point2f> dstPoints;
-	dstPoints.push_back( Point2f((640/2)-50, 480) );
-	dstPoints.push_back( Point2f((640/2)+50, 480) );
-	dstPoints.push_back( Point2f(640, 0) );
-	dstPoints.push_back( Point2f(0, 0));
-	
-	// IPM object
-	
-	 
-	 
-	IPM ipm( Size(640, 480), Size(640, 480), origPoints, dstPoints );
-	
-	
-	
-	
-
-	
-	
-		 // Process
-		
-	
-	
-	
-	
-		 
-		 
-	
-		 ipm.applyHomography( inputImg, outputImg );	
-
-	
-	 	 
-		
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-clock_t end_IPM = clock();
-
-
- 
-		 double elapsed_secs_IPM = double(end_IPM - begin_IPM) / CLOCKS_PER_SEC;
-		 printf("%.2f   (ms)\r", 1000*elapsed_secs_IPM);
-		 cout << "IPM time : " << 1000*elapsed_secs_IPM <<endl;
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	
-		
-		  
-		 ipm.drawPoints(origPoints, inputImg );
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-
-	
-	
-	
-	
-		
-		
-		
-		Vec3b intensity = outputImg.at<Vec3b>(240, 136);
-uchar blue = intensity.val[0];
-uchar green = intensity.val[1];
-uchar red = intensity.val[2];
-
- 
-		 
- 
-	
-	vector<Point> vertices{Point(0,0), Point(270,480), Point(0,480)};
-	vector<vector<Point>> pts{vertices};
-//	fillPoly(outputImg, pts, Scalar(100,100,100,0));
-	fillPoly(outputImg, pts, Scalar(blue,green,red,0));
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		Vec3b intensity1 = outputImg.at<Vec3b>(240, 504);
-uchar blue1 = intensity1.val[0];
-uchar green1 = intensity1.val[1];
-uchar red1 = intensity1.val[2];
-
-
-	
-	vector<Point> vertices1{Point(640,0), Point(370,480), Point(640,480)};
-	vector<vector<Point>> pts1{vertices1};
-	//fillPoly(outputImg, pts1, Scalar(100,100,100,0));	
-	fillPoly(outputImg, pts1, Scalar(blue1,green1,red1,0));	 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
 		 
 		
 		 
@@ -400,8 +249,7 @@ uchar red1 = intensity1.val[2];
 		 
 		 
 		  imshow("Input", inputImg);
-		  imshow("Output", outputImg);	
-		 
+		
 
 
 
@@ -438,7 +286,7 @@ int scale = 1;
 int delta = 0;
 int ddepth = CV_16S;		 
 		 
-GaussianBlur( outputImg, outputImg, Size(13,13), 0, 0, BORDER_DEFAULT );	//GaussianBlur( src, src, Size(3,3), 0, 0, BORDER_DEFAULT );		 
+GaussianBlur( inputImg, inputImg, Size(13,13), 0, 0, BORDER_DEFAULT );	//GaussianBlur( src, src, Size(3,3), 0, 0, BORDER_DEFAULT );		 
 		 
 //cvtColor( outputImg, inputImgGray, CV_BGR2GRAY );		 // Bunu sil
 		 
@@ -447,9 +295,9 @@ Mat grad_x, grad_y;
 Mat abs_grad_x, abs_grad_y;
 
 /// Gradient X
-Sobel( outputImg, grad_x, ddepth, 1, 0, 3, scale, delta, BORDER_DEFAULT );   //inputImgGray i src ile değiştir
+Sobel( inputImg, grad_x, ddepth, 1, 0, 3, scale, delta, BORDER_DEFAULT );   //inputImgGray i src ile değiştir
 /// Gradient Y
-Sobel( outputImg, grad_y, ddepth, 0, 1, 3, scale, delta, BORDER_DEFAULT );	//inputImgGray i src ile değiştir
+Sobel( inputImg, grad_y, ddepth, 0, 1, 3, scale, delta, BORDER_DEFAULT );	//inputImgGray i src ile değiştir
 		 
 		 
 convertScaleAbs( grad_x, abs_grad_x );
