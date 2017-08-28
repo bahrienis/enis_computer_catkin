@@ -291,7 +291,7 @@ int main(int argc, char **argv) {
                 sayi++;
 
          */
-        // std::string filename = "/home/enis/Schreibtisch/deneme2/frame12.jpg";
+      //   std::string filename = "/home/enis/Schreibtisch/deneme2/frame12.jpg";
         std::string filename = "/home/enis/Schreibtisch/frame0058.jpg";
 
 
@@ -388,18 +388,11 @@ int main(int argc, char **argv) {
 
 
 
-
-
-
-
-
-
-
-
-
-
         threshold(outputImg3, cdst1, 0.6 * maxVal, 255, 1);
 
+        
+        
+        
 
 
 
@@ -493,7 +486,7 @@ int main(int argc, char **argv) {
 
 
         int findredlinesarray1[640];
-        int a1 = 0;
+        int a11 = 0;
 
         for (int k = 639; k >= 0; k--) {
 
@@ -509,8 +502,8 @@ int main(int argc, char **argv) {
 
             if (red1 >= 100 && red1 <= 200) {
 
-                findredlinesarray1[a1] = k;
-                a1++;
+                findredlinesarray1[a11] = k;
+                a11++;
             }
         }
 
@@ -545,7 +538,7 @@ int main(int argc, char **argv) {
                     
             
             
-        for (jj = 3; jj < a1; jj++) {
+        for (jj = 3; jj < a11; jj++) {
             thebiggestvalue1 = findredlinesarray1[jj-1] - findredlinesarray1[jj];
             
             if (thebiggestvalue1 >= thebiggestvalue11 || thebiggestvalue1 >= thebiggestvalue12) {
@@ -568,7 +561,7 @@ int main(int argc, char **argv) {
         }
 
         cout << "thebiggestvalue1 : " << thebiggestvalue11 << " thebiggestvalue12 : " << thebiggestvalue12 << endl;
-         cout << "the biggest poisiton : " << thebiggestvalue11position << "tsbp : " << thebiggestvalue12position << endl;
+         cout << "the biggest poisiton : " << thebiggestvalue11position << " tsbp : " << thebiggestvalue12position << endl;
 
 
          
@@ -592,30 +585,32 @@ int main(int argc, char **argv) {
          
          
          
-         
-         
-         
-         
-         
-         
-         
-         
-  double x[10000],y[10000];       
-         
-           
-				
-  vector<Vec4i> lines;
-  HoughLinesP(outputImg4, lines, 1, CV_PI/180, 10, 10, 10 );
-  for( size_t i = 0; i < lines.size(); i++ )
+  double x1[10000],y1[10000];
+  double x2[10000],y2[10000]; 
+   double x3[10000],y3[10000];
+  int numberofpointsoffirstlane1 = 0;
+  int numberofpointsoffirstlane2 = 0;
+  int numberofpointsofsecondlane1 = 0;
+  int numberofpointsofsecondlane2 = 0;
+  int numberofpointsofthirdlane1 = 0;
+  int numberofpointsofthirdlane2 = 0;
   
 
+         
+  //1. Bild         
+				
+  vector<Vec4i> lines1P;
+  HoughLinesP(outputImg4, lines1P, 1, CV_PI/180, 10, 10, 10 );
+  for( size_t i = 0; i < lines1P.size(); i++)
   
   {
-    Vec4i l = lines[i];
+    Vec4i l = lines1P[i];
 
  //   line( outputImg4gray, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0,0,255), 3, CV_AA);
    
-   
+ //   cout << "deneme : " << lines.size() << endl;
+    
+    
    circle( outputImg4gray, Point(l[0], l[1]), 1, Scalar(0,0,255), 1, CV_AA, 0);
    circle( outputImg4gray, Point(l[2], l[3]), 1, Scalar(0,0,255), 1, CV_AA, 0);
    
@@ -625,240 +620,87 @@ int main(int argc, char **argv) {
    
    
 
-   if(l[0]>=thebiggestvalue11position){
-      x[i]=l[0];
-      x[i+9] = l[2];
-    y[i]=l[1];
-    y[i+9] = l[3];
-    cout << "x degeri : "<< x[i] << " y değeri : " << y[i] << endl;
+   if(l[0]>=thebiggestvalue11position && l[0]<639){
+      x1[numberofpointsoffirstlane1]=l[0];
+  //    x[i+1] = l[2];
+    y1[numberofpointsoffirstlane1]=l[1]+200;
+    numberofpointsoffirstlane1++;
+  //  y[i+1] = l[3];
+    
+    
+    
+    
+ 
+  
+   }
+   
+   else if(l[0]<=thebiggestvalue11position && l[0]>= thebiggestvalue12position){
+       x2[numberofpointsofsecondlane1] = l[0];
+       y2[numberofpointsofsecondlane1] = l[1] + 200;
+       numberofpointsofsecondlane1++;
    }
    
    
+   
+   
+   else if(l[0]<= thebiggestvalue12position){
+       x3[numberofpointsofthirdlane1] = l[0];
+       y3[numberofpointsofthirdlane1] = l[1] + 200;
+       numberofpointsofthirdlane1++;
+   }
+  
+   
+  }
+  
+ 
+  
+  
+  
+  
+  
+  
+  
   /*
-   
-   if(l[1] >440)
-   {
-	     if(l[0]>=thebiggestvaluex)
-	     {
-			 thebiggestvaluex = l[0];
-			 thebiggestvaluey = l[1];
-	   //cout << "x degeri : " << l[0] << " ve y değeri : " << l[1] << endl; 
-   }
-   }
- 
+   for(int xxx=0;xxx<numberofpointsofsecondlane1;xxx++)
+  {
+      cout << "x degeri : "<< x2[xxx] << " y degeri : " << y2[xxx] << endl;
+  }
+  
+  */
   
   
   
   
   
-  */ 
-   
-  }  
   
   
   
   
- //cout << "en büyük değer x : " << thebiggestvaluex << " ve en büyük değer y : " <<  thebiggestvaluey << endl;
- //imshow("Sobel+Canny+Hough Trasformation", cdst);
-   
- 
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   int i,j,k,n,N;
-   cout.precision(4);  						//set precision
-   cout.setf(ios::fixed);
-   N = lines.size();
-/*   double x[N],y[N];
-   for(i=0;i<N;i++)
-   x[i]=l[0];
-    for(i=0;i<N;i++)
-    y[i]=l[1];   */
-    n = 2;   								//polinomun derecesi
-    double X[2*n+1];
-    for(i=0;i<2*n+1;i++)
-    {
-		X[i]=0;
-		for(j=0;j<N;j++)
-		X[i]=X[i]+pow(x[j],i);
-	}
-	double B[n+1][n+2],a[n+1];
-	for(i=0;i<=n;i++)
-		for(j=0;j<=n;j++)
-		B[i][j]=X[i+j];
-	double Y[n+1];
-	for(i=0;i<n+1;i++)
-	{
-		Y[i]=0;
-		for(j=0;j<N;j++)
-		Y[i]=Y[i]+pow(x[j],i)*y[j];
-	}
-	for(i=0;i<=n;i++)
-	B[i][n+1]=Y[i];
-	n=n+1;
-/*	cout<<"\nThe Normal (Augmented Matrix) is as follows:\n";
-	for(i=0;i<n;i++)
-	{
-		for(j=0;j<=n;j++)
-		cout<<B[i][j]<<setw(16);
-		cout<<"\n";
-	}
-*/	for(i=0;i<n;i++)
-	for(k=i+1;k<n;k++)
-	if(B[i][i]<B[k][i])
-	for(j=0;j<=n;j++)
-	{
-		double temp=B[i][j];
-		B[i][j]=B[k][j];
-		B[k][j]=temp;
-	}
-	for(i=0;i<n-1;i++)
-	for(k=i+1;k<n;k++)
-	{
-		double t=B[k][i]/B[i][i];
-		for(j=0;j<=n;j++)
-		B[k][j]=B[k][j]-t*B[i][j];
-	}
-	for(i=n-1;i>=0;i--)
-	{
-		a[i]=B[i][n];
-		for(j=0;j<n;j++)
-		if(j!=i)
-		a[i]=a[i]-B[i][j]*a[j];
-		a[i]=a[i]/B[i][i];
-	}
-	cout<<"\nThe values of the cofficients are as follows:\n";
-	for(i=0;i<n;i++)
-	cout << "x´"<<i<<"="<<a[i]<<endl;
-	cout<<"\nHence the fitted Polynomial is given by:\ny=";
-	for(i=0;i<n;i++)
-	cout<<" + ("<<a[i]<<")"<<"x´"<<i;
-	cout<<"\n";
-
-	
-		
-   
-   
-   
-   
-   
-   
-   
   
-   
-   int p,r;
-   for(p=0;p<480;p++)
-   {
-	   r=a[0] + a[1] * p + a[2] * p * p;
-	   if(r>=0 && r<=640)
-	  // cout<<p<< " degeri " <<r<<endl;
-	   circle( outputImg4gray, Point(p, r), 1, Scalar(0,255,0), 1, CV_AA, 0);
-	   }
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-        imshow("Sobel+Canny+Hough Trasformation1", outputImg4gray);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-
-
-
-
-
-        Rect Rec5(0, 140, 640, 140);
+         
+              Rect Rec5(0, 140, 640, 140);
         rectangle(dst, Rec5, Scalar(255), 1, 8, 0);
 
 
@@ -881,17 +723,550 @@ int main(int argc, char **argv) {
             pt1.y = cvRound(y0 + 1000 * (a));
             pt2.x = cvRound(x0 - 1000 * (-b));
             pt2.y = cvRound(y0 - 1000 * (a));
-            line(outputImg5gray, pt1, pt2, Scalar(0, 0, 255), 3, CV_AA);
-
-
+            line(outputImg5gray, pt1, pt2, Scalar(0, 0, 150), 1, CV_AA);
 
 
         }
+        
+        
+        
+      
+         int findredlinesarray2[640];
+        int a2 = 0;
+
+        for (int k = 639; k >= 0; k--) {
+
+            Vec3b intensity2 = outputImg5gray.at<Vec3b>(10, k);
+            uchar blue2 = intensity2.val[0];
+            uchar green2 = intensity2.val[1];
+            uchar red2 = intensity2.val[2];
 
 
 
 
 
+
+            if (red2 >= 100 && red2 <= 200) {
+
+                findredlinesarray2[a2] = k;
+                a2++;
+            }
+        }
+
+
+   /*     for (int i = 0; i < a11; i++) {
+
+
+            cout << "x değerleri : " << findredlinesarray1[i] << endl;
+
+        }
+
+*/
+
+        int thebiggestvalue2 = 0;
+        int thebiggestvalue21 = 0;
+        int thebiggestvalue22 = 0;
+         int thebiggestvalue21position = 0;
+          int thebiggestvalue22position = 0;
+         
+        int jjj = 3;
+        
+        
+        thebiggestvalue21 = findredlinesarray2[jjj - 3] - findredlinesarray2[jjj - 2];
+            thebiggestvalue22 = findredlinesarray2[jjj - 2] - findredlinesarray2[jjj - 1];
+            
+            
+            
+            thebiggestvalue21position = findredlinesarray2[jjj - 3];
+             thebiggestvalue22position  = findredlinesarray2[jjj - 2];     
+                    
+                    
+                    
+            
+            
+        for (jjj = 3; jjj < a11; jjj++) {
+            thebiggestvalue2 = findredlinesarray2[jjj-1] - findredlinesarray2[jjj];
+            
+            if (thebiggestvalue2 >= thebiggestvalue21 || thebiggestvalue2 >= thebiggestvalue22) {
+                if(thebiggestvalue2 >= thebiggestvalue21){
+                thebiggestvalue22 = thebiggestvalue21;
+                thebiggestvalue21 = thebiggestvalue2;
+                
+                
+                thebiggestvalue22position = thebiggestvalue21position;
+                thebiggestvalue21position = findredlinesarray2[jjj];
+                
+                }
+                else{
+                    thebiggestvalue22 = thebiggestvalue2;
+                    
+                    
+                    thebiggestvalue22position = findredlinesarray2[jjj];
+                }
+            }
+        }
+
+        cout << "thebiggestvalue2 : " << thebiggestvalue21 << " thebiggestvalue22 : " << thebiggestvalue22 << endl;
+         cout << "the biggest poisiton21 : " << thebiggestvalue21position << " tsbp : " << thebiggestvalue22position << endl;
+
+        
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+ 
+  
+  //2. bild
+  
+  
+  
+    vector<Vec4i> lines2P;
+  HoughLinesP(outputImg5, lines2P, 1, CV_PI/180, 10, 10, 10 );
+  for( size_t i = 0; i < lines2P.size(); i++)
+  
+
+  
+  {
+    Vec4i l = lines2P[i];
+
+ //   line( outputImg4gray, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0,0,255), 3, CV_AA);
+   
+ //   cout << "deneme : " << lines.size() << endl;
+    
+    
+   circle( outputImg5gray, Point(l[0], l[1]), 1, Scalar(0,0,255), 1, CV_AA, 0);
+   circle( outputImg5gray, Point(l[2], l[3]), 1, Scalar(0,0,255), 1, CV_AA, 0);
+   
+   
+   
+   
+   
+   
+
+   if(l[0]>=thebiggestvalue21position && l[0]<639){
+      x1[numberofpointsoffirstlane2+numberofpointsoffirstlane1]=l[0];
+  //    x[i+1] = l[2];
+    y1[numberofpointsoffirstlane2+numberofpointsoffirstlane1]=l[1]+340;
+    numberofpointsoffirstlane2++;
+  //  y[i+1] = l[3];
+    
+    
+    
+  //  cout << "x degeri : "<< x[i+lines1P.size()] << " y değeri : " << y[i+lines1P.size()] << endl;
+  
+   }
+   
+   
+   
+   
+    else if(l[0]<=thebiggestvalue21position && l[0]>= thebiggestvalue22position){
+       x2[numberofpointsofsecondlane2+numberofpointsofsecondlane1] = l[0];
+       y2[numberofpointsofsecondlane2+numberofpointsofsecondlane1] = l[1] + 340;
+       numberofpointsofsecondlane2++;
+   
+  
+  } 
+   
+   
+   
+   
+   
+      else if(l[0]<= thebiggestvalue22position){
+       x2[numberofpointsofthirdlane2+numberofpointsofthirdlane1] = l[0];
+       y2[numberofpointsofthirdlane2+numberofpointsofthirdlane1] = l[1] + 340;
+       numberofpointsofthirdlane2++;
+   
+  
+  } 
+   
+   
+   
+  }
+  
+  
+  
+  
+
+   
+   
+   
+   
+   
+   
+  /*
+  for(int xxx=0;xxx<numberofpointsofsecondlane2+numberofpointsofsecondlane1;xxx++)
+  {
+      cout << "x degeri : "<< x2[xxx] << " y degeri : " << y2[xxx] << endl;
+  }
+   
+     
+ */  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   int i1,j1,k1,n1,N1;
+   cout.precision(4);  						//set precision
+   cout.setf(ios::fixed);
+   N1 = numberofpointsoffirstlane2+numberofpointsoffirstlane1;//lines.size();
+/*   double x[N],y[N];
+   for(i=0;i<N;i++)
+   x[i]=l[0];
+    for(i=0;i<N;i++)
+    y[i]=l[1];   */
+    n1 = 2;   								//polinomun derecesi
+    double X1[2*n1+1];
+    for(i1=0;i1<2*n1+1;i1++)
+    {
+		X1[i1]=0;
+		for(j1=0;j1<N1;j1++)
+		X1[i1]=X1[i1]+pow(x1[j1],i1);
+	}
+	double B1[n1+1][n1+2],a1[n1+1];
+	for(i1=0;i1<=n1;i1++)
+		for(j1=0;j1<=n1;j1++)
+		B1[i1][j1]=X1[i1+j1];
+	double Y1[n1+1];
+	for(i1=0;i1<n1+1;i1++)
+	{
+		Y1[i1]=0;
+		for(j1=0;j1<N1;j1++)
+		Y1[i1]=Y1[i1]+pow(x1[j1],i1)*y1[j1];
+	}
+	for(i1=0;i1<=n1;i1++)
+	B1[i1][n1+1]=Y1[i1];
+	n1=n1+1;
+/*	cout<<"\nThe Normal (Augmented Matrix) is as follows:\n";
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<=n;j++)
+		cout<<B[i][j]<<setw(16);
+		cout<<"\n";
+	}
+*/	for(i1=0;i1<n1;i1++)
+	for(k1=i1+1;k1<n1;k1++)
+	if(B1[i1][i1]<B1[k1][i1])
+	for(j1=0;j1<=n1;j1++)
+	{
+		double temp1=B1[i1][j1];
+		B1[i1][j1]=B1[k1][j1];
+		B1[k1][j1]=temp1;
+	}
+	for(i1=0;i1<n1-1;i1++)
+	for(k1=i1+1;k1<n1;k1++)
+	{
+		double t1=B1[k1][i1]/B1[i1][i1];
+		for(j1=0;j1<=n1;j1++)
+		B1[k1][j1]=B1[k1][j1]-t1*B1[i1][j1];
+	}
+	for(i1=n1-1;i1>=0;i1--)
+	{
+		a1[i1]=B1[i1][n1];
+		for(j1=0;j1<n1;j1++)
+		if(j1!=i1)
+		a1[i1]=a1[i1]-B1[i1][j1]*a1[j1];
+		a1[i1]=a1[i1]/B1[i1][i1];
+	}
+	cout<<"\nThe values of the cofficients are as follows:\n";
+	for(i1=0;i1<n1;i1++)
+	cout << "x´"<<i1<<"="<<a1[i1]<<endl;
+	cout<<"\nHence the fitted Polynomial is given by:\ny=";
+	for(i1=0;i1<n1;i1++)
+	cout<<" + ("<<a1[i1]<<")"<<"x´"<<i1;
+	cout<<"\n";
+
+	
+		
+   
+   
+   
+   
+   
+   
+   
+   int p1,r1;
+   for(p1=0;p1<640;p1++)
+   {
+	   r1=a1[0] + a1[1] * p1 + a1[2] * p1 * p1;
+	   if(r1>=0 && r1<=480)
+	  // cout<<p<< " degeri " <<r<<endl;
+	   circle( inputImg, Point(p1, r1), 1, Scalar(0,255,0), 1, CV_AA, 0);
+	   }
+         
+         
+         
+         
+         
+         
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   int i2,j2,k2,n2,N2;
+   cout.precision(4);  						//set precision
+   cout.setf(ios::fixed);
+   N2 = numberofpointsofsecondlane2+numberofpointsofsecondlane1;//lines.size();
+/*   double x[N],y[N];
+   for(i=0;i<N;i++)
+   x[i]=l[0];
+    for(i=0;i<N;i++)
+    y[i]=l[1];   */
+    n2 = 2;   								//polinomun derecesi
+    double X2[2*n2+1];
+    for(i2=0;i2<2*n2+1;i2++)
+    {
+		X2[i2]=0;
+		for(j2=0;j2<N2;j2++)
+		X2[i2]=X2[i2]+pow(x2[j2],i2);
+	}
+	double B2[n2+1][n2+2],a22[n2+1];
+	for(i2=0;i2<=n2;i2++)
+		for(j2=0;j2<=n2;j2++)
+		B2[i2][j2]=X2[i2+j2];
+	double Y2[n2+1];
+	for(i2=0;i2<n2+1;i2++)
+	{
+		Y2[i2]=0;
+		for(j2=0;j2<N2;j2++)
+		Y2[i2]=Y2[i2]+pow(x2[j2],i2)*y2[j2];
+	}
+	for(i2=0;i2<=n2;i2++)
+	B2[i2][n2+1]=Y2[i2];
+	n2=n2+1;
+/*	cout<<"\nThe Normal (Augmented Matrix) is as follows:\n";
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<=n;j++)
+		cout<<B[i][j]<<setw(16);
+		cout<<"\n";
+	}
+*/	for(i2=0;i2<n2;i2++)
+	for(k2=i2+1;k2<n2;k2++)
+	if(B2[i2][i2]<B2[k2][i2])
+	for(j2=0;j2<=n2;j2++)
+	{
+		double temp2=B2[i2][j2];
+		B2[i2][j2]=B2[k2][j2];
+		B2[k2][j2]=temp2;
+	}
+	for(i2=0;i2<n2-1;i2++)
+	for(k2=i2+1;k2<n2;k2++)
+	{
+		double t2=B2[k2][i2]/B2[i2][i2];
+		for(j2=0;j2<=n2;j2++)
+		B2[k2][j2]=B2[k2][j2]-t2*B2[i2][j2];
+	}
+	for(i2=n2-1;i2>=0;i2--)
+	{
+		a22[i2]=B2[i2][n2];
+		for(j2=0;j2<n2;j2++)
+		if(j2!=i2)
+		a22[i2]=a22[i2]-B2[i2][j2]*a22[j2];
+		a22[i2]=a22[i2]/B2[i2][i2];
+	}
+	cout<<"\nThe values of the cofficients are as follows:\n";
+	for(i2=0;i2<n2;i2++)
+	cout << "x2´"<<i2<<"="<<a22[i2]<<endl;
+	cout<<"\nHence the fitted Polynomial is given by:\ny=";
+	for(i2=0;i2<n2;i2++)
+	cout<<" + ("<<a22[i2]<<")"<<"x2´"<<i2;
+	cout<<"\n";
+
+	
+		
+   
+   
+   
+   
+   int p2,r2;
+   for(p2=0;p2<640;p2++)
+   {
+	   r2=a22[0] + a22[1] * p2 + a22[2] * p2 * p2;
+	   if(r2>=0 && r2<=480)
+	  // cout<<p<< " degeri " <<r<<endl;
+	   circle( inputImg, Point(p2, r2), 1, Scalar(0,255,0), 1, CV_AA, 0);
+	   }
+   
+   
+   
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+      int i3,j3,k3,n3,N3;
+   cout.precision(4);  						//set precision
+   cout.setf(ios::fixed);
+   N3 = numberofpointsofthirdlane2+numberofpointsofthirdlane1;//lines.size();
+/*   double x[N],y[N];
+   for(i=0;i<N;i++)
+   x[i]=l[0];
+    for(i=0;i<N;i++)
+    y[i]=l[1];   */
+    n3 = 2;   								//polinomun derecesi
+    double X3[2*n3+1];
+    for(i3=0;i3<2*n3+1;i3++)
+    {
+		X3[i3]=0;
+		for(j3=0;j3<N3;j3++)
+		X3[i3]=X3[i3]+pow(x3[j3],i3);
+	}
+	double B3[n3+1][n3+2],a3[n3+1];
+	for(i3=0;i3<=n3;i3++)
+		for(j3=0;j3<=n3;j3++)
+		B3[i3][j3]=X3[i3+j3];
+	double Y3[n3+1];
+	for(i3=0;i3<n3+1;i3++)
+	{
+		Y3[i3]=0;
+		for(j3=0;j3<N3;j3++)
+		Y3[i3]=Y3[i3]+pow(x3[j3],i3)*y3[j3];
+	}
+	for(i3=0;i3<=n3;i3++)
+	B3[i3][n3+1]=Y3[i3];
+	n3=n3+1;
+/*	cout<<"\nThe Normal (Augmented Matrix) is as follows:\n";
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<=n;j++)
+		cout<<B[i][j]<<setw(16);
+		cout<<"\n";
+	}
+*/	for(i3=0;i3<n3;i3++)
+	for(k3=i3+1;k3<n3;k3++)
+	if(B3[i3][i3]<B3[k3][i3])
+	for(j3=0;j3<=n3;j3++)
+	{
+		double temp3=B3[i3][j3];
+		B3[i3][j3]=B3[k3][j3];
+		B3[k3][j3]=temp3;
+	}
+	for(i3=0;i3<n3-1;i3++)
+	for(k3=i3+1;k3<n3;k3++)
+	{
+		double t3=B3[k3][i3]/B3[i3][i3];
+		for(j3=0;j3<=n3;j3++)
+		B3[k3][j3]=B3[k3][j3]-t3*B3[i3][j3];
+	}
+	for(i3=n3-1;i3>=0;i3--)
+	{
+		a3[i3]=B3[i3][n3];
+		for(j3=0;j3<n3;j3++)
+		if(j3!=i3)
+		a3[i3]=a3[i3]-B3[i3][j3]*a3[j3];
+		a3[i3]=a3[i3]/B3[i3][i3];
+	}
+	cout<<"\nThe values of the cofficients are as follows:\n";
+	for(i3=0;i3<n3;i3++)
+	cout << "x3´"<<i3<<"="<<a3[i3]<<endl;
+	cout<<"\nHence the fitted Polynomial is given by:\ny=";
+	for(i3=0;i2<n3;i3++)
+	cout<<" + ("<<a3[i3]<<")"<<"x3´"<<i3;
+	cout<<"\n";
+
+	
+		
+   
+   
+   
+   
+   int p3,r3;
+   for(p3=0;p3<640;p3++)
+   {
+	   r3=a3[0] + a3[1] * p3 + a3[2] * p3 * p3;
+	   if(r3>=0 && r3<=480)
+	  // cout<<p<< " degeri " <<r<<endl;
+	   circle( inputImg, Point(p3, r3), 1, Scalar(0,255,0), 1, CV_AA, 0);
+	   }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+         
+         
+         
+         
+         
+         
+         
+         
+        imshow("Sobel+Canny+Hough Trasformation1", outputImg4gray);
 
 
         imshow("Sobel+Canny+Hough Trasformation2", outputImg5gray);
