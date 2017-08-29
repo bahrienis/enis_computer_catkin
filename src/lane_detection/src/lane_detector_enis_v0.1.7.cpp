@@ -291,8 +291,8 @@ int main(int argc, char **argv) {
                 sayi++;
 */ 
          
-       //  std::string filename = "/home/enis/Schreibtisch/deneme2/frame12.jpg";
-        std::string filename = "/home/enis/Schreibtisch/frame0058.jpg";
+        std::string filename = "/home/enis/Schreibtisch/deneme2/frame12.jpg";
+     //    std::string filename = "/home/enis/Schreibtisch/frame0058.jpg";
 
 
         inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
@@ -385,9 +385,6 @@ int main(int argc, char **argv) {
         cout << "min val : " << minVal << endl;
         cout << "max val: " << maxVal << endl;
 
-
-
-
         threshold(outputImg3, cdst1, 0.6 * maxVal, 255, 1);
 
         
@@ -396,6 +393,9 @@ int main(int argc, char **argv) {
 
 
 
+        
+        
+        
 
         Mat grad_x, grad_y;
         Mat abs_grad_x, abs_grad_y;
@@ -522,6 +522,8 @@ int main(int argc, char **argv) {
         int thebiggestvalue12 = 0;
          int thebiggestvalue11position = 0;
           int thebiggestvalue12position = 0;
+          int thebiggestvalue11_1_position = 0;
+          int thebiggestvalue12_1_position = 0;
          
         int jj = 3;
         
@@ -549,6 +551,7 @@ int main(int argc, char **argv) {
                 
                 thebiggestvalue12position = thebiggestvalue11position;
                 thebiggestvalue11position = findredlinesarray1[jj];
+                thebiggestvalue11_1_position = findredlinesarray1[jj - 1];
                 
                 }
                 else{
@@ -556,13 +559,14 @@ int main(int argc, char **argv) {
                     
                     
                     thebiggestvalue12position = findredlinesarray1[jj];
+                    thebiggestvalue12_1_position = findredlinesarray1[jj - 1];
                 }
             }
         }
 
         cout << "thebiggestvalue1 : " << thebiggestvalue11 << " thebiggestvalue12 : " << thebiggestvalue12 << endl;
          cout << "the biggest poisiton : " << thebiggestvalue11position << " tsbp : " << thebiggestvalue12position << endl;
-
+         cout << "deneme 1 : " << thebiggestvalue11_1_position << " deneme 2 : " << thebiggestvalue12_1_position <<endl;
 
          
          
@@ -620,7 +624,7 @@ int main(int argc, char **argv) {
    
    
 
-   if(l[0]>=thebiggestvalue11position && l[0]<639){
+   if(l[0]>= ((thebiggestvalue11position + thebiggestvalue11_1_position) / 2) && l[0]<639){
       x1[numberofpointsoffirstlane1]=l[0];
   //    x[i+1] = l[2];
     y1[numberofpointsoffirstlane1]=l[1]+200;
@@ -634,7 +638,7 @@ int main(int argc, char **argv) {
   
    }
    
-   else if(l[0]<=thebiggestvalue11position && l[0]>= thebiggestvalue12position){
+   else if(l[0]<= ((thebiggestvalue11position + thebiggestvalue11_1_position) / 2) && l[0]>= ((thebiggestvalue12position + thebiggestvalue12_1_position) / 2)){
        x2[numberofpointsofsecondlane1] = l[0];
        y2[numberofpointsofsecondlane1] = l[1] + 200;
        numberofpointsofsecondlane1++;
@@ -643,7 +647,7 @@ int main(int argc, char **argv) {
    
    
    
-   else if(l[0]<= thebiggestvalue12position){
+   else if(l[0] > 0 && l[0]<= (thebiggestvalue12position + thebiggestvalue12_1_position) / 2){
        x3[numberofpointsofthirdlane1] = l[0];
        y3[numberofpointsofthirdlane1] = l[1] + 200;
        numberofpointsofthirdlane1++;
@@ -768,6 +772,8 @@ int main(int argc, char **argv) {
         int thebiggestvalue22 = 0;
          int thebiggestvalue21position = 0;
           int thebiggestvalue22position = 0;
+          int thebiggestvalue21_1_position = 0;
+          int thebiggestvalue22_1_position = 0;
          
         int jjj = 3;
         
@@ -795,6 +801,7 @@ int main(int argc, char **argv) {
                 
                 thebiggestvalue22position = thebiggestvalue21position;
                 thebiggestvalue21position = findredlinesarray2[jjj];
+                thebiggestvalue21_1_position = findredlinesarray2[jjj - 1];
                 
                 }
                 else{
@@ -802,13 +809,14 @@ int main(int argc, char **argv) {
                     
                     
                     thebiggestvalue22position = findredlinesarray2[jjj];
+                    thebiggestvalue22_1_position = findredlinesarray2[jjj - 1];
                 }
             }
         }
 
         cout << "thebiggestvalue2 : " << thebiggestvalue21 << " thebiggestvalue22 : " << thebiggestvalue22 << endl;
          cout << "the biggest poisiton21 : " << thebiggestvalue21position << " tsbp : " << thebiggestvalue22position << endl;
-
+cout << "deneme 1 : " << thebiggestvalue21_1_position << " deneme 2 : " << thebiggestvalue22_1_position <<endl;
         
 
 
@@ -853,7 +861,7 @@ int main(int argc, char **argv) {
    
    
 
-   if(l[0]>=thebiggestvalue21position && l[0]<639){
+   if(l[0]>= ((thebiggestvalue21position + thebiggestvalue21_1_position) / 2 )&& l[0]<639){
       x1[numberofpointsoffirstlane2+numberofpointsoffirstlane1]=l[0];
   //    x[i+1] = l[2];
     y1[numberofpointsoffirstlane2+numberofpointsoffirstlane1]=l[1]+340;
@@ -869,7 +877,7 @@ int main(int argc, char **argv) {
    
    
    
-    else if(l[0]<=thebiggestvalue21position && l[0]>= thebiggestvalue22position){
+    else if(l[0]<= ((thebiggestvalue21position + thebiggestvalue21_1_position) / 2 ) && l[0]>= ((thebiggestvalue22position + thebiggestvalue22_1_position) / 2 )){
        x2[numberofpointsofsecondlane2+numberofpointsofsecondlane1] = l[0];
        y2[numberofpointsofsecondlane2+numberofpointsofsecondlane1] = l[1] + 340;
        numberofpointsofsecondlane2++;
@@ -881,7 +889,7 @@ int main(int argc, char **argv) {
    
    
    
-      else if(l[0]<= thebiggestvalue22position){
+      else if(l[0] > 0 && l[0]<= ((thebiggestvalue22position + thebiggestvalue22_1_position) / 2 )){
        x2[numberofpointsofthirdlane2+numberofpointsofthirdlane1] = l[0];
        y2[numberofpointsofthirdlane2+numberofpointsofthirdlane1] = l[1] + 340;
        numberofpointsofthirdlane2++;
