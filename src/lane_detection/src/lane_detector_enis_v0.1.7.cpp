@@ -291,8 +291,8 @@ int main(int argc, char **argv) {
                 sayi++;
 */ 
          
-        std::string filename = "/home/enis/Schreibtisch/deneme2/frame12.jpg";
-     //    std::string filename = "/home/enis/Schreibtisch/frame0058.jpg";
+     //    std::string filename = "/home/enis/Schreibtisch/Masterarbeit/deneme2/frame12.jpg";
+        std::string filename = "/home/enis/Schreibtisch/Masterarbeit/frame0058.jpg";
 
 
         inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
